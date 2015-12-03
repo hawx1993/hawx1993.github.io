@@ -1639,6 +1639,7 @@ pre .css ~ * .id {
 }
 .footer-right {
   float: right;
+  display: none;
 }
 .share {
   padding: 0px 75px 30px 40px;

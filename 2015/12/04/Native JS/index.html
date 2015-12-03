@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>前端博客</title>
+  <title>JS | 前端博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="分享技术心得">
-<meta property="og:type" content="website">
-<meta property="og:title" content="前端博客">
-<meta property="og:url" content="hawx1993.github.io/index.html">
+  <meta name="description" content="callee和caller
+
+1234567891011121314151617181920function inner()&amp;#123;    console.log(arguments.callee);//指向拥有这个arguments对象的函数，即inner()    console.log(arguments.callee.caller);//这个属性保存着调用当前函数的函数的引用,即out">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS">
+<meta property="og:url" content="hawx1993.github.io/2015/12/04/Native JS/index.html">
 <meta property="og:site_name" content="前端博客">
-<meta property="og:description" content="分享技术心得">
+<meta property="og:description" content="callee和caller
+
+1234567891011121314151617181920function inner()&amp;#123;    console.log(arguments.callee);//指向拥有这个arguments对象的函数，即inner()    console.log(arguments.callee.caller);//这个属性保存着调用当前函数的函数的引用,即out">
+<meta property="og:updated_time" content="2015-12-03T16:15:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端博客">
-<meta name="twitter:description" content="分享技术心得">
+<meta name="twitter:title" content="JS">
+<meta name="twitter:description" content="callee和caller
+
+1234567891011121314151617181920function inner()&amp;#123;    console.log(arguments.callee);//指向拥有这个arguments对象的函数，即inner()    console.log(arguments.callee.caller);//这个属性保存着调用当前函数的函数的引用,即out">
   
     <link rel="alternative" href="/atom.xml" title="前端博客" type="application/atom+xml">
   
@@ -184,9 +191,7 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="关于原生js的一些研究-Native JS" class="article article-type-关于原生js的一些研究" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="关于原生js的一些研究-Native JS" class="article article-type-关于原生js的一些研究" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2015/12/04/Native JS/" class="article-date">
@@ -202,12 +207,23 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/04/Native JS/">JS</a>
+    <h1 class="article-title" itemprop="name">
+      JS
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -510,90 +526,62 @@ obj.yes();
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/12/03/mac install mongodb/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mac下安装mongodb及使用教程</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
 
-
-
-
-
-
-  
-    <article id="post-mac install mongodb" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/03/mac install mongodb/" class="article-date">
-  	<time datetime="2015-12-03T08:48:51.000Z" itemprop="datePublished">2015-12-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/03/mac install mongodb/">mac下安装mongodb及使用教程</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="概念">概念</h2><p><code>MongoDB</code> 是一个跨平台的，面向文档的数据库，提供高性能，高可用性和可扩展性方便。 <code>MongoDB</code> 工作在收集和文件的概念。</p>
-<h2 id="什么是NoSql？">什么是NoSql？</h2><p><code>NoSql</code>，全称是 <code>Not Only Sql</code>,指的是非关系型的数据库。下一代数据库主要解决几个要点：非关系型的、分布式的、开源的、水平可扩展的。原始的目的是为了大规模<code>web</code>应用，这场运动开始于2009年初，通常特性应用如：模式自由、支持简易复制、简单的<code>API</code>、最终的一致性（非<code>ACID</code>）、大容量数据等。<code>NoSQL</code>被我们用得最多的当数<code>key-value</code>存储，当然还有其他的文档型的、列存储、图型数据库、<code>xml</code>数据库等。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li></ul>
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/03/mac install mongodb/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Native JS" data-title="JS" data-url="hawx1993.github.io/2015/12/04/Native JS/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
 
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -614,8 +602,8 @@ obj.yes();
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

@@ -61,7 +61,7 @@
                 var tempDom = target.clone().addClass("lazy-loding").insertBefore(target);
                 tempDom[0].src = "/img/img-loading.png";
                 target.hide();
-            }
+            };
             /**
              * @description src替换，loading过程中添加类lazy-loading;
              */
@@ -95,10 +95,10 @@
                         target.parent().find(".lazy-loding").remove();
                         target.show();
                         imgload(e, target);
-                    }
+                    };
                     target[0].src = src;
                 }
-            }
+            };
 
             /**
              * @description 重组
@@ -153,7 +153,7 @@
                         }
                     }
                 });
-            }
+            };
 
             //加载完毕即执行
             scrollHandle();
