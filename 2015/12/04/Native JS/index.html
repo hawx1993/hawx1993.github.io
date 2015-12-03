@@ -3,24 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>JS | 前端博客</title>
+  <title>关于原生js的一些研究 | 前端博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="callee和caller
-
-1234567891011121314151617181920function inner()&amp;#123;    console.log(arguments.callee);//指向拥有这个arguments对象的函数，即inner()    console.log(arguments.callee.caller);//这个属性保存着调用当前函数的函数的引用,即out">
+  <meta name="description" content="##callee和caller
+1234567891011121314151617181920function inner()&amp;#123;    console.log(arguments.callee);//指向拥有这个arguments对象的函数，即inner()    console.log(arguments.callee.caller);//这个属性保存着调用当前函数的函数的引用,即ou">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS">
+<meta property="og:title" content="关于原生js的一些研究">
 <meta property="og:url" content="hawx1993.github.io/2015/12/04/Native JS/index.html">
 <meta property="og:site_name" content="前端博客">
-<meta property="og:description" content="callee和caller
-
-1234567891011121314151617181920function inner()&amp;#123;    console.log(arguments.callee);//指向拥有这个arguments对象的函数，即inner()    console.log(arguments.callee.caller);//这个属性保存着调用当前函数的函数的引用,即out">
-<meta property="og:updated_time" content="2015-12-03T16:15:59.000Z">
+<meta property="og:description" content="##callee和caller
+1234567891011121314151617181920function inner()&amp;#123;    console.log(arguments.callee);//指向拥有这个arguments对象的函数，即inner()    console.log(arguments.callee.caller);//这个属性保存着调用当前函数的函数的引用,即ou">
+<meta property="og:updated_time" content="2015-12-03T16:18:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS">
-<meta name="twitter:description" content="callee和caller
-
-1234567891011121314151617181920function inner()&amp;#123;    console.log(arguments.callee);//指向拥有这个arguments对象的函数，即inner()    console.log(arguments.callee.caller);//这个属性保存着调用当前函数的函数的引用,即out">
+<meta name="twitter:title" content="关于原生js的一些研究">
+<meta name="twitter:description" content="##callee和caller
+1234567891011121314151617181920function inner()&amp;#123;    console.log(arguments.callee);//指向拥有这个arguments对象的函数，即inner()    console.log(arguments.callee.caller);//这个属性保存着调用当前函数的函数的引用,即ou">
   
     <link rel="alternative" href="/atom.xml" title="前端博客" type="application/atom+xml">
   
@@ -121,7 +118,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/js/" style="font-size: 10px;">js</a>
+						<a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a>
 					</div>
 				</section>
 				
@@ -191,7 +188,7 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="关于原生js的一些研究-Native JS" class="article article-type-关于原生js的一些研究" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Native JS" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2015/12/04/Native JS/" class="article-date">
@@ -208,7 +205,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JS
+      关于原生js的一些研究
     </h1>
   
 
@@ -217,7 +214,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 	</div>
 
         
@@ -228,8 +225,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>callee和caller</p>
-<hr>
+        <p>##callee和caller</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee);<span class="comment">//指向拥有这个arguments对象的函数，即inner()</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee.caller);<span class="comment">//这个属性保存着调用当前函数的函数的引用,即outer()</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(inner.caller);<span class="comment">//[Function: outer]</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    inner();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">outer();</span><br></pre></td></tr></table></figure>
 <p><code>callee</code>放回正在执行的函数本身的引用，它是<code>arguments</code>的一个属性</p>
 <p><code>caller</code> 返回一个函数的引用，这个函数调用了当前的函数。</p>
@@ -532,8 +528,8 @@ obj.yes();
 <nav id="article-nav">
   
   
-    <a href="/2015/12/03/mac install mongodb/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">mac下安装mongodb及使用教程</div>
+    <a href="/2015/12/04/someTips/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">someTips</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -562,7 +558,7 @@ obj.yes();
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Native JS" data-title="JS" data-url="hawx1993.github.io/2015/12/04/Native JS/"></div>
+	<div class="ds-thread" data-thread-key="Native JS" data-title="关于原生js的一些研究" data-url="hawx1993.github.io/2015/12/04/Native JS/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
