@@ -5,22 +5,19 @@
   
   <title>关于原生js的一些研究 | 前端博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: 关于原生js的一些研究date: 2015-12-04 00:15:05
-tags: javascript##callee和caller
-1234567891011121314151617function inner()&amp;#123;    console.log(arguments.callee);//指向拥有这个arguments对象的函数，即inner()    console.">
+  <meta name="description" content="##callee和caller
+1234567891011121314151617function inner()&amp;#123;    console.log(arguments.callee);//指向拥有这个arguments对象的函数，即inner()    console.log(arguments.callee.caller);//这个属性保存着调用当前函数的函数的引用,即outer()">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于原生js的一些研究">
 <meta property="og:url" content="hawx1993.github.io/2015/12/04/Native JS/index.html">
 <meta property="og:site_name" content="前端博客">
-<meta property="og:description" content="title: 关于原生js的一些研究date: 2015-12-04 00:15:05
-tags: javascript##callee和caller
-1234567891011121314151617function inner()&amp;#123;    console.log(arguments.callee);//指向拥有这个arguments对象的函数，即inner()    console.">
-<meta property="og:updated_time" content="2015-12-04T08:38:02.000Z">
+<meta property="og:description" content="##callee和caller
+1234567891011121314151617function inner()&amp;#123;    console.log(arguments.callee);//指向拥有这个arguments对象的函数，即inner()    console.log(arguments.callee.caller);//这个属性保存着调用当前函数的函数的引用,即outer()">
+<meta property="og:updated_time" content="2015-12-04T08:43:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于原生js的一些研究">
-<meta name="twitter:description" content="title: 关于原生js的一些研究date: 2015-12-04 00:15:05
-tags: javascript##callee和caller
-1234567891011121314151617function inner()&amp;#123;    console.log(arguments.callee);//指向拥有这个arguments对象的函数，即inner()    console.">
+<meta name="twitter:description" content="##callee和caller
+1234567891011121314151617function inner()&amp;#123;    console.log(arguments.callee);//指向拥有这个arguments对象的函数，即inner()    console.log(arguments.callee.caller);//这个属性保存着调用当前函数的函数的引用,即outer()">
   
     <link rel="alternative" href="/atom.xml" title="前端博客" type="application/atom+xml">
   
@@ -228,8 +225,7 @@ tags: javascript##callee和caller
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: 关于原生js的一些研究<br>date: 2015-12-04 00:15:05</p>
-<h2 id="tags:_javascript">tags: javascript</h2><p>##callee和caller</p>
+        <p>##callee和caller</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee);<span class="comment">//指向拥有这个arguments对象的函数，即inner()</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee.caller);<span class="comment">//这个属性保存着调用当前函数的函数的引用,即outer()</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(inner.caller);<span class="comment">//[Function: outer]</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    inner();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">outer();</span><br></pre></td></tr></table></figure>
 <p><code>callee</code>放回正在执行的函数本身的引用，它是<code>arguments</code>的一个属性</p>
 <p><code>caller</code> 返回一个函数的引用，这个函数调用了当前的函数。</p>
