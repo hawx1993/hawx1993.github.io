@@ -1472,10 +1472,6 @@ a {
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-.article-entry .highlight .gutter pre,
-.article-entry .gist .gist-file .gist-data .line-numbers {
-  color: #666;
-}
 .article-entry pre,
 .article-entry code {
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
@@ -1486,13 +1482,13 @@ a {
   border: none;
 }
 .article-entry pre {
-  color: #a71d5d;
+  color: #333;
 }
 .article-entry pre code {
   background: none;
   text-shadow: none;
   padding: 0;
-  color: #a71d5d;
+  color: #333;
 }
 .article-entry .highlight pre {
   border: none;
@@ -1527,9 +1523,7 @@ a {
 .article-entry .highlight .gutter pre {
   text-align: right;
   padding-right: 20px;
-}
-.article-entry .highlight .gutter pre .line {
-  text-shadow: none;
+  display: none;
 }
 .article-entry .highlight .line {
   font-size: 15px;
@@ -1553,8 +1547,6 @@ a {
   border: none;
 }
 .article-entry .gist .gist-file .gist-data .line-numbers {
-  background: none;
-  border: none;
   padding: 0 20px 0 0;
 }
 .article-entry .gist .gist-file .gist-data .line-data {
@@ -1593,7 +1585,7 @@ pre .tag,
 pre .doctype,
 pre .params,
 pre .function {
-  color: #a71d5d;
+  color: #333;
 }
 pre .css ~ * .tag,
 pre .title,
@@ -1608,11 +1600,11 @@ pre .built_in,
 pre .class,
 pre .css ~ * .class,
 pre .function .title {
-  color: #a6e22e;
+  color: #183691;
 }
 pre .value,
 pre .string {
-  color: #e6db74;
+  color: #b58900;
 }
 pre .number {
   color: #7163d7;
