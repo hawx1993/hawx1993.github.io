@@ -212,15 +212,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###安装和使用babel</p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ sudo <span class="built_in">npm</span> install --<span class="built_in">global</span> babel</span><br></pre></td></tr></table></figure>
+        <p>##安装和使用babel</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install --global babel</span><br></pre></td></tr></table></figure>
 <p><br></p>
 <p>在mac终端使用<code>babel-node</code>可以直接在终端执行es6代码。</p>
 <p><br></p>
 <p><code>babel</code>命令可以直接将<code>es6</code>代码转为<code>es5</code>代码。添加<code>-o</code>参数可以导出一个标准输出文件</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">babel  <span class="regexp">/Users/</span>trigkit4<span class="regexp">/Desktop/</span>webStormProject<span class="regexp">/es6.js -o es5.js</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">babel  /Users/trigkit4/Desktop/webStormProject/es6.js -o es5.js</span><br></pre></td></tr></table></figure>
 <p>也可以安装babel的浏览器版本：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo npm <span class="keyword">install</span> babel-core</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install babel-core</span><br></pre></td></tr></table></figure>
 <p>就可以在<code>node_modules</code>下找到<code>babel-core</code>文件夹了，找到<code>browser.js</code>通过script标签引入该文件即可。</p>
 <p><code>ES6</code>脚本放在<code>script</code>标签之中，但是要注明<code>type=&quot;text/babel&quot;</code>。</p>
       
