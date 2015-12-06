@@ -1504,7 +1504,7 @@ a {
   padding: 0;
 }
 .article-entry .highlight figcaption {
-  font-size: 0.85em;
+  font-size: 0.75em;
   color: highlight-comment;
   line-height: 1em;
   margin-bottom: 1em;
@@ -1526,8 +1526,8 @@ a {
   display: none;
 }
 .article-entry .highlight .line {
-  font-size: 15px;
-  height: 15px;
+  font-size: 14px;
+  height: 14px;
 }
 .article-entry .gist {
   margin: 0 -20px;
@@ -1560,7 +1560,7 @@ a {
 .article-entry .gist .gist-file .gist-meta {
   background: #f7f7f7;
   color: highlight-comment;
-  font: 0.85em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 0.75em "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-shadow: 0 0;
   padding: 0;
   margin-top: 1em;
@@ -1574,12 +1574,12 @@ a {
   text-decoration: underline;
 }
 pre .comment {
-  color: #75715e;
+  color: #93a1a1;
 }
 pre .keyword,
 pre .function .keyword,
 pre .class .params {
-  color: #66d9ef;
+  color: #a71d5d;
 }
 pre .tag,
 pre .doctype,
@@ -1593,18 +1593,18 @@ pre .at_rule,
 pre .at_rule .keyword,
 pre .preprocessor,
 pre .preprocessor .keyword {
-  color: #f92672;
+  color: #268bd2;
 }
 pre .attribute,
 pre .built_in,
 pre .class,
 pre .css ~ * .class,
 pre .function .title {
-  color: #183691;
+  color: #795da3;
 }
 pre .value,
 pre .string {
-  color: #b58900;
+  color: #2aa198;
 }
 pre .number {
   color: #7163d7;
