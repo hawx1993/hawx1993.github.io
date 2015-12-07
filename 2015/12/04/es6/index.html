@@ -25,7 +25,7 @@ babel命令可以直接将es6代码转为es5代码。添加-o参数可以导出�
 babel命令可以直接将es6代码转为es5代码。添加-o参数可以导出一个标准输出文件
 1babel  /Users/trigkit4/Desktop/webStormProject/es6.js -o es5.js
 也可以安装ba">
-<meta property="og:updated_time" content="2015-12-06T15:42:38.000Z">
+<meta property="og:updated_time" content="2015-12-07T12:30:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMAScript6 学习笔记">
 <meta name="twitter:description" content="##安装和使用babel
@@ -116,6 +116,8 @@ babel命令可以直接将es6代码转为es5代码。添加-o参数可以导出�
 				        
 							<li><a href="/archives">所有文章</a></li>
 				        
+							<li><a href="/comments">留言</a></li>
+				        
 							<li><a href="/tags/随笔">随笔</a></li>
 				        
 						</ul>
@@ -127,7 +129,7 @@ babel命令可以直接将es6代码转为es5代码。添加-o参数可以导出�
 					        
 								<a class="weibo" target="_blank" href="/weibo.com/hawx1993" title="weibo">weibo</a>
 					        
-								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/trigkit4" title="zhihu">zhihu</a>
+								<a class="mail" target="_blank" href="/trigkit@163.com" title="mail">mail</a>
 					        
 						</div>
 					</nav>
@@ -136,7 +138,7 @@ babel命令可以直接将es6代码转为es5代码。添加-o参数可以导出�
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ECMAScript6-JavaScript/" style="font-size: 10px;">ECMAScript6,JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/react-native-reactjs/" style="font-size: 10px;">react-native,reactjs</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a>
+						<a href="/tags/ECMAScript6-JavaScript/" style="font-size: 10px;">ECMAScript6,JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Node-js-MongoDb-Mongoose/" style="font-size: 10px;">Node.js,MongoDb,Mongoose</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/react-native-reactjs/" style="font-size: 10px;">react-native,reactjs</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
 					</div>
 				</section>
 				
@@ -187,6 +189,8 @@ babel命令可以直接将es6代码转为es5代码。添加-o参数可以导出�
 		        
 					<li><a href="/archives">所有文章</a></li>
 		        
+					<li><a href="/comments">留言</a></li>
+		        
 					<li><a href="/tags/随笔">随笔</a></li>
 		        
 		        <div class="clearfix"></div>
@@ -199,7 +203,7 @@ babel命令可以直接将es6代码转为es5代码。添加-o参数可以导出�
 			        
 						<a class="weibo" target="_blank" href="/weibo.com/hawx1993" title="weibo">weibo</a>
 			        
-						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/trigkit4" title="zhihu">zhihu</a>
+						<a class="mail" target="_blank" href="/trigkit@163.com" title="mail">mail</a>
 			        
 				</div>
 			</nav>
@@ -236,6 +240,10 @@ babel命令可以直接将es6代码转为es5代码。添加-o参数可以导出�
 	</div>
 
         
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/tech/">tech</a>
+	</div>
+
 
         <div class="clearfix"></div>
       </div>
@@ -333,9 +341,9 @@ babel命令可以直接将es6代码转为es5代码。添加-o参数可以导出�
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    constructor(name,color)&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">this</span>.color = color;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//实例方法</span></span><br><span class="line"></span><br><span class="line">    toString()&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'name:'</span>+ <span class="keyword">this</span>.name + <span class="string">',color:'</span> + <span class="keyword">this</span>.color);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> animal = <span class="keyword">new</span> Animal(<span class="string">'dog'</span>,<span class="string">'white'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(animal.hasOwnProperty(<span class="string">'name'</span>));<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(animal.hasOwnProperty(<span class="string">'toString'</span>));<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
 <p><code>constructor</code>方法，这就是构造方法，构造函数的名字就是<code>class</code>的名字，而<code>this</code>关键字则代表实例对象。也就是说，<code>ES5</code>的构造函数<code>Animal</code>，对应<code>ES6</code>的<code>Animal</code>类的构造方法。</p>
 <p><code>ES6</code>的类，完全可以看做构造函数的另一种写法。</p>
-<pre><code><span class="keyword">class</span> 类名{
+<pre><code>class 类名{
 
-    constructor(形参<span class="number">1</span>，形参<span class="number">2</span>);
+    constructor(形参1，形参2);
 
 }
 </code></pre><p>####class中的继承</p>
@@ -431,6 +439,15 @@ babel命令可以直接将es6代码转为es5代码。添加-o参数可以导出�
   
     
 <nav id="article-nav">
+  
+    <a href="/2015/12/07/goodWords/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          名言佳句整理
+        
+      </div>
+    </a>
   
   
     <a href="/2015/12/04/react/" id="article-nav-older" class="article-nav-link-wrap">
