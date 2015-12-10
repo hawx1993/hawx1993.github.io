@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jade模板引擎的使用 | 前端博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="jade是对空格敏感的模板引擎。子元素缩进两个空格
+可以直接在终端编译jade模板引擎为html文件：jade index.jade，编译后的代码是压缩过的，加参数-P就可以变为未经编译的。
+###使用wenstorm来实时编译jade为HTML：
+打开preference——tools——File Watcher——+——jade，然后在Arguments``那里加入-P`参数即可不用压缩
+
+也">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jade模板引擎的使用">
+<meta property="og:url" content="hawx1993.github.io/2015/12/10/jade/index.html">
+<meta property="og:site_name" content="前端博客">
+<meta property="og:description" content="jade是对空格敏感的模板引擎。子元素缩进两个空格
+可以直接在终端编译jade模板引擎为html文件：jade index.jade，编译后的代码是压缩过的，加参数-P就可以变为未经编译的。
+###使用wenstorm来实时编译jade为HTML：
+打开preference——tools——File Watcher——+——jade，然后在Arguments``那里加入-P`参数即可不用压缩
+
+也">
+<meta property="og:updated_time" content="2015-12-10T14:49:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jade模板引擎的使用">
+<meta name="twitter:description" content="jade是对空格敏感的模板引擎。子元素缩进两个空格
+可以直接在终端编译jade模板引擎为html文件：jade index.jade，编译后的代码是压缩过的，加参数-P就可以变为未经编译的。
+###使用wenstorm来实时编译jade为HTML：
+打开preference——tools——File Watcher——+——jade，然后在Arguments``那里加入-P`参数即可不用压缩
+
+也">
+  
+    <link rel="alternative" href="/atom.xml" title="前端博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/me.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">trigkit4</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">trigkit4 | 前端笔记</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/diary">技术日记</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/hawx1993" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/weibo.com/hawx1993" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/trigkit@163.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/ECMAScript6-JavaScript/" style="font-size: 10px;">ECMAScript6,JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Node-js-MongoDb-Mongoose/" style="font-size: 10px;">Node.js,MongoDb,Mongoose</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/jade/" style="font-size: 10px;">jade</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/react-native-reactjs/" style="font-size: 10px;">react-native,reactjs</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://segmentfault.com/u/trigkit4">我的sf</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">大二开始接触前端开发，大三在美团实习。喜欢简洁风格，Mac重度用户。喜爱折腾的前端工程师一枚</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">trigkit4</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/me.jpeg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">trigkit4</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">trigkit4 | 前端笔记</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/diary">技术日记</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/hawx1993" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/weibo.com/hawx1993" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/trigkit@163.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-jade" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/10/jade/" class="article-date">
+  	<time datetime="2015-12-10T14:48:16.000Z" itemprop="datePublished">2015-12-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jade模板引擎的使用
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jade/">jade</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>jade是对空格敏感的模板引擎。子元素缩进两个空格</p>
+<p>可以直接在终端编译<code>jade</code>模板引擎为html文件：<code>jade index.jade</code>，编译后的代码是压缩过的，加参数<code>-P</code>就可以变为未经编译的。</p>
+<p>###使用wenstorm来实时编译jade为HTML：</p>
+<p>打开<code>preference——tools——File Watcher——+——jade</code>，然后在<code>Arguments``那里加入</code>-P`参数即可不用压缩</p>
+<p><br></p>
+<p>也可以安装<code>gulp-jade</code>插件来转换成HTML：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> jade = <span class="built_in">require</span>(<span class="string">'gulp-jade'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'templates'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> YOUR_LOCALS = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  gulp.src(<span class="string">'./lib/*.jade'</span>)</span><br><span class="line"></span><br><span class="line">    .pipe(jade(&#123;</span><br><span class="line"></span><br><span class="line">      locals: YOUR_LOCALS</span><br><span class="line"></span><br><span class="line">    &#125;))</span><br><span class="line"></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./dist/'</span>))</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>注意：<code>-</code> 开头在 <code>jade</code> 中属于服务端执行的代码</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">-<span class="ruby"> console.log(<span class="string">'hello'</span>); <span class="regexp">//</span> 这段代码在服务端执行</span><br><span class="line"></span></span><br><span class="line">-<span class="ruby"> var s = <span class="string">'hello world'</span> /<span class="regexp">/ 在服务端空间中定义变量</span></span></span><br></pre></td></tr></table></figure>
+<p>jade 的变量调用有 3 种方式</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#&#123;<span class="ruby">表达式&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-<span class="ruby"> var name = <span class="string">'trigkit4'</span></span><br><span class="line"></span></span><br><span class="line">   title #&#123;<span class="ruby">name.toUpperCase()&#125;</span>     </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;title&gt;TRIGKIT4&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">=<span class="ruby">表达式</span><br><span class="line"></span></span><br><span class="line">!=<span class="ruby">表达式</span></span><br></pre></td></tr></table></figure>
+<p>一行开头的任何文本都会默认被解释成<code>HTML</code>标签。</p>
+<p>传给<code>jade</code>模板的数据称为<code>locals</code>，要输出一个变量的值，可以使用等号<code>=</code>。使用等号赋值的时候要注意，等号和标签不能有空格间距。</p>
+<p>Jade代码：</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span><br><span class="line">h1 = title</span><br><span class="line"></span><br><span class="line">p = body</span><br><span class="line"></span><br><span class="line">(locals):</span><br><span class="line"></span><br><span class="line"></span><span class="expression">&#123;</span><br><span class="line"></span><br><span class="line"><span class="variable">title</span>:<span class="string">"Express.js Guide"</span>,</span><br><span class="line"></span><br><span class="line"><span class="variable">body</span>:<span class="string">"hi"</span></span><br><span class="line"></span><br><span class="line">&#125;</span><span class="xml"></span><br><span class="line"></span><br><span class="line">//输出的HTML：</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>Express.js Guide<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>hi<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>属性紧跟在标签的名字之后，用括号括起来，格式是<code>name = value</code>。</p>
+<p>符号<code>|</code>允许我们在新的一行里写<code>HTML</code>节点的内容，也就是说有符号|的那行会变成文本内容。</p>
+<p>值是<code>false</code>的属性在输出<code>HTML</code>代码会被忽略，而当没有传值时，会被赋值为<code>true</code>。比如：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="title">input</span><span class="params">(type=<span class="string">"radio"</span>,checked)</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">input</span><span class="params">(type=<span class="string">'radio'</span>,checked=true)</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">input</span><span class="params">(type=<span class="string">'radio'</span>,checked=false)</span></span></span><br><span class="line"></span><br><span class="line">&lt;<span class="tag">input</span> type=<span class="string">'radio'</span> checked=<span class="string">'checked'</span>/&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="tag">input</span> type=<span class="string">'radio'</span> checked=<span class="string">'checked'</span>/&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="tag">input</span> type=<span class="string">"radio"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<p>成组的属性名可以通过括号来写，以逗号的形式分隔，内容和括号空一格例如：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="title">a</span><span class="params">(href=<span class="string">'hawx1993.github.io'</span>,title=<span class="string">'trigkit4'</span>)</span></span> hello jade</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<p><code>&lt;a href=&quot;hawx1993.github.io&quot; title=&quot;trigkit4&quot;&gt;hello jade&lt;/a&gt;</code></p>
+<p>如果要实现文本换行，只需要在元素标签后面添加点号（.）即可，点号允许你在一个标签内包含很大的代码块：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">p</span>.</span><br><span class="line"></span><br><span class="line">       <span class="tag">hello</span></span><br><span class="line"></span><br><span class="line">       <span class="tag">trigkit4</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">style</span>.</span><br><span class="line"></span><br><span class="line">    <span class="tag">h3</span><span class="rules">&#123;</span><br><span class="line"></span><br><span class="line">        <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#333</span></span><br><span class="line"></span><br><span class="line">    </span></span></span>&#125;</span><br></pre></td></tr></table></figure>
+<p>就会被编译成：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;p&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">hello</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">trigkit4</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/p&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">style</span></span><br></pre></td></tr></table></figure>
+<p>注释：<code>//-</code>编译后的注释不会显示在<code>html</code>代码中。<code>//</code>的注释则会</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">&lt;!--[if lte IE 6]&gt;</span><br><span class="line"></span><br><span class="line">&lt;![endif]--&gt;</span></span><br><span class="line"></span><br><span class="line">IE6及其以下版本可见</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--[if lte IE 7]&gt;</span><br><span class="line"></span><br><span class="line">&lt;![endif]--&gt;</span></span><br><span class="line"></span><br><span class="line">IE7及其以下版本可见</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--[if IE 6]&gt;</span><br><span class="line"></span><br><span class="line">&lt;![endif]--&gt;</span></span><br><span class="line"></span><br><span class="line">只有IE6版本可见</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">![if</span> !<span class="attribute">IE</span>]&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">![endif]</span>&gt;</span></span><br><span class="line"></span><br><span class="line">除了IE以外的版本</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--[if lt IE 8]&gt;</span><br><span class="line"></span><br><span class="line">&lt;![endif]--&gt;</span></span><br><span class="line"></span><br><span class="line">IE8以下的版本可见</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--[if gte IE 7]&gt;</span><br><span class="line"></span><br><span class="line">&lt;![endif]--&gt;</span></span><br><span class="line"></span><br><span class="line">IE7及大于IE7的版本可见</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>综合的版本如下：</p>
+</blockquote>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="xml">doctype html</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--[if lte IE 8]&gt;</span><br><span class="line"></span><br><span class="line">|&lt;html lang="#&#123;data_lang&#125;" class="lte-ie8"&gt;</span><br><span class="line"></span><br><span class="line">&lt;![endif]--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--[if gt IE 8]&gt;&lt;!--&gt;</span></span><br><span class="line"></span><br><span class="line">|<span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"#&#123;data_lang&#125;"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--&lt;![endif]--&gt;</span></span><br><span class="line"></span><br><span class="line">head</span><br><span class="line"></span><br><span class="line">   meta(charset='utf-8')</span><br><span class="line"></span><br><span class="line">   meta(name='viewport', content='width=device-width, initial-scale=1.0')</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">|<span class="tag">&lt;/<span class="title">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>采用此类注释时，<code>head</code> 和<code>body</code>等标签此时要顶格写，要有html的闭合标签</p>
+<p>###mixin创建重复使用的代码块</p>
+<p>在<code>Scss</code> 和 <code>Jade</code> 中，混合宏（<code>mixins</code>）都是举足轻重的语法。<code>mixin</code>可以看做一个函数，可以在函数名中传入参数，当然也可以不传。混合宏具有复用、解耦、可读、可扩、可维护等等优势。创建混合宏需要使用 <code>mixin</code> 标识符，创建混合宏实例时，需要使用 + 标识符（调用函数）：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mixin <span class="function"><span class="title">pet</span><span class="params">(name)</span></span></span><br><span class="line"></span><br><span class="line">  <span class="tag">li</span>.pet= name</span><br><span class="line"></span><br><span class="line"><span class="tag">ul</span></span><br><span class="line"></span><br><span class="line">  +<span class="function"><span class="title">pet</span><span class="params">(<span class="string">'cat'</span>)</span></span></span><br><span class="line"></span><br><span class="line">  +<span class="function"><span class="title">pet</span><span class="params">(<span class="string">'dog'</span>)</span></span></span><br><span class="line"></span><br><span class="line">  +<span class="function"><span class="title">pet</span><span class="params">(<span class="string">'pig'</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p>生成的 HTML：</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;ul&gt;</span><br><span class="line"></span><br><span class="line">  &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"pet"</span>&gt;<span class="keyword">cat</span>&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line"></span><br><span class="line">  &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"pet"</span>&gt;dog&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line"></span><br><span class="line">  &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"pet"</span>&gt;pig&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<p>还可以使用 … 标识符表示不定数量的参数：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mixin <span class="function"><span class="title">list</span><span class="params">(id, ...items)</span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">ul</span><span class="params">(id=id)</span></span></span><br><span class="line"></span><br><span class="line">    each item <span class="keyword">in</span> items</span><br><span class="line"></span><br><span class="line">      li= item</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">+<span class="function"><span class="title">list</span><span class="params">(<span class="string">'my-list'</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p>生成的 HTML：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">id</span>=<span class="value">"my-list"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span>&gt;</span>1<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span>&gt;</span>2<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span>&gt;</span>3<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span>&gt;</span>4<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>有时候，我们需要替换混合宏的某个部分，那么就可以使用<code>block</code> 标识符来占位：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mixin <span class="function"><span class="title">article</span><span class="params">(title)</span></span></span><br><span class="line"></span><br><span class="line">  <span class="class">.article</span></span><br><span class="line"></span><br><span class="line">    <span class="class">.article-wrapper</span></span><br><span class="line"></span><br><span class="line">      h1= title</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> block    <span class="comment">//如果有这个代码块</span></span><br><span class="line"></span><br><span class="line">        block   <span class="comment">//就把代码块放到这边来</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">p</span> No <span class="attribute">content</span> provided</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">+<span class="function"><span class="title">article</span><span class="params">(<span class="string">'Hello world'</span>)</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">+<span class="function"><span class="title">article</span><span class="params">(<span class="string">'Hello world'</span>)</span></span></span><br><span class="line"></span><br><span class="line">  <span class="tag">p</span> This is my</span><br><span class="line"></span><br><span class="line">  <span class="tag">p</span> Amazing article</span><br></pre></td></tr></table></figure>
+<p>生成的 <code>HTML</code>：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"article"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"article-wrapper"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">h1</span>&gt;</span>Hello world<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">p</span>&gt;</span>No content provided<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"article"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"article-wrapper"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">h1</span>&gt;</span>Hello world<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">p</span>&gt;</span>This is my<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">p</span>&gt;</span>Amazing article<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>除非作为子元素，否则+号要与<code>mixin</code>对齐</p>
+<p>Jade 中使用 <code>extends</code> 来继承代码片段，与 <code>include</code> 本本分分地引用代码段不同，继承可以修改代码片段。</p>
+<blockquote>
+<p>each循环</p>
+</blockquote>
+<p>jade对于循环提供了省略<code>&quot;-&quot;</code>减号的写法，你也可以使用for来代替each。实际上是<code>for...in</code>循环。jade还提供了while循环，同样不需要使用<code>&quot;-&quot;</code>减号</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="stata">mixin study(name,courses)</span><br><span class="line"></span><br><span class="line">         - <span class="keyword">var</span> <span class="keyword">n</span>=0</span><br><span class="line"></span><br><span class="line">         p #&#123;name&#125;</span><br><span class="line"></span><br><span class="line">         ul.courses</span><br><span class="line"></span><br><span class="line">            each course <span class="keyword">in</span> courses</span><br><span class="line"></span><br><span class="line">               <span class="keyword">li</span>=course</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> <span class="keyword">n</span> &lt; 3</span><br><span class="line"></span><br><span class="line">               <span class="keyword">li</span>= <span class="keyword">n</span>++</span><br><span class="line"></span><br><span class="line"> +study('tom',['jade','node'])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">对应的如下：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;p&gt;tom&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">        &lt;ul <span class="keyword">class</span>=<span class="string">"courses"</span>&gt;</span><br><span class="line"></span><br><span class="line">          &lt;<span class="keyword">li</span>&gt;jade&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line"></span><br><span class="line">          &lt;<span class="keyword">li</span>&gt;node&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line"></span><br><span class="line">          &lt;<span class="keyword">li</span>&gt;0&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line"></span><br><span class="line">          &lt;<span class="keyword">li</span>&gt;1&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line"></span><br><span class="line">          &lt;<span class="keyword">li</span>&gt;2&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line"></span><br><span class="line">        &lt;/ul&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>继承：<code>block</code>和<code>extends</code>继承自</p>
+</blockquote>
+<p>一个<code>block</code>是一个jade代码块，可以被一个子模板替代。</p>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">block</span> test</span><br><span class="line"></span><br><span class="line">         p hello world</span><br><span class="line"></span><br><span class="line">      <span class="built_in">block</span> test</span><br><span class="line"></span><br><span class="line">      <span class="built_in">block</span> test</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable">&lt;p&gt;</span>hello world<span class="variable">&lt;/p&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="variable">&lt;p&gt;</span>hello world<span class="variable">&lt;/p&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="variable">&lt;p&gt;</span>hello world<span class="variable">&lt;/p&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>&amp;attributes</code></p>
+</blockquote>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- <span class="built_in">var</span> attributes = &#123;<span class="string">'data-foo'</span>: <span class="string">'bar'</span>&#125;;</span><br><span class="line"></span><br><span class="line">div<span class="variable">#foo</span>(<span class="built_in">data</span><span class="attribute">-bar</span>=<span class="string">"foo"</span>)<span class="subst">&amp;</span>attributes(attributes)</span><br><span class="line"></span><br><span class="line">将被解析成：</span><br><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"foo"</span> <span class="built_in">data</span><span class="attribute">-bar</span>=<span class="string">"foo"</span> <span class="built_in">data</span><span class="attribute">-foo</span>=<span class="string">"bar"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/12/09/git/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git常用命令</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="jade" data-title="jade模板引擎的使用" data-url="hawx1993.github.io/2015/12/10/jade/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+		var duoshuoQuery = {short_name:"trigkit4"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0]
+			|| document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 trigkit4
+    	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
