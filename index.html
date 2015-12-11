@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ECMAScript6-JavaScript/" style="font-size: 10px;">ECMAScript6,JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Node-js-MongoDb-Mongoose/" style="font-size: 10px;">Node.js,MongoDb,Mongoose</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/jade/" style="font-size: 10px;">jade</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react-native-reactjs/" style="font-size: 10px;">react-native,reactjs</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+						<a href="/tags/ECMAScript6-JavaScript/" style="font-size: 10px;">ECMAScript6,JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Node-js-MongoDb-Mongoose/" style="font-size: 10px;">Node.js,MongoDb, Mongoose</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/jade/" style="font-size: 10px;">jade</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react-native-reactjs/" style="font-size: 10px;">react-native,reactjs</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
 					</div>
 				</section>
 				
@@ -354,11 +354,10 @@
       
         <p>jade是对空格敏感的模板引擎。子元素缩进两个空格</p>
 <p>可以直接在终端编译<code>jade</code>模板引擎为html文件：<code>jade index.jade</code>，编译后的代码是压缩过的，加参数<code>-P</code>就可以变为未经编译的。</p>
-<p>###使用wenstorm来实时编译jade为HTML：</p>
-<p>打开<code>preference——tools——File Watcher——+——jade</code>，然后在<code>Arguments``那里加入</code>-P`参数即可不用压缩</p>
+<h3 id="u4F7F_u7528wenstorm_u6765_u5B9E_u65F6_u7F16_u8BD1jade_u4E3AHTML_uFF1A"><a href="#u4F7F_u7528wenstorm_u6765_u5B9E_u65F6_u7F16_u8BD1jade_u4E3AHTML_uFF1A" class="headerlink" title="使用<code>wenstorm</code>来实时编译<code>jade</code>为HTML："></a>使用<code>wenstorm</code>来实时编译<code>jade</code>为HTML：</h3><p>打开<code>preference——tools——File Watcher——+——jade</code>，然后在<code>Arguments``那里加入</code>-P`参数即可不用压缩</p>
 <p><br></p>
 <p>也可以安装<code>gulp-jade</code>插件来转换成HTML：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> jade = <span class="built_in">require</span>(<span class="string">'gulp-jade'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'templates'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> YOUR_LOCALS = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  gulp.src(<span class="string">'./lib/*.jade'</span>)</span><br><span class="line"></span><br><span class="line">    .pipe(jade(&#123;</span><br><span class="line"></span><br><span class="line">      locals: YOUR_LOCALS</span><br><span class="line"></span><br><span class="line">    &#125;))</span><br><span class="line"></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./dist/'</span>))</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> jade = <span class="built_in">require</span>(<span class="string">'gulp-jade'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'templates'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> YOUR_LOCALS = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  gulp.src(<span class="string">'./lib/*.jade'</span>)</span><br><span class="line"></span><br><span class="line">    .pipe(jade(&#123;</span><br><span class="line"></span><br><span class="line">      locals: YOUR_LOCALS</span><br><span class="line"></span><br><span class="line">    &#125;))</span><br><span class="line"></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./dist/'</span>))</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -475,15 +474,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##使用Mongoose操作MongoDB</p>
-<p><code>Mongoose</code>是基于<code>node-mongodb-native</code>开发的<code>MongoDB nodejs</code>驱动，可以在异步的环境下执行。</p>
+        <h2 id="u4F7F_u7528Mongoose_u64CD_u4F5CMongoDB"><a href="#u4F7F_u7528Mongoose_u64CD_u4F5CMongoDB" class="headerlink" title="使用<code>Mongoose</code>操作<code>MongoDB</code>"></a>使用<code>Mongoose</code>操作<code>MongoDB</code></h2><p><code>Mongoose</code>是基于<code>node-mongodb-native</code>开发的<code>MongoDB nodejs</code>驱动，可以在异步的环境下执行。</p>
 <p>关于在Mac下安装和使用<code>MongoDB</code>可以看我之前的一篇文章：</p>
 <blockquote>
 <p>文章传送门：<a href="http://segmentfault.com/a/1190000002547229#articleHeader4">Mac下安装MongoDB 及使用教程</a></p>
 </blockquote>
-<p>###MongoDB PATH环境变量配置</p>
-<p>将<code>mongodb</code>添加到环境变量中：<code>$ vim ~/.zshrc</code>，添加如下命令行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$PATH</span>:/usr/local/mongodb/bin"</span></span><br></pre></td></tr></table></figure>
+<h3 id="MongoDB_PATH_u73AF_u5883_u53D8_u91CF_u914D_u7F6E"><a href="#MongoDB_PATH_u73AF_u5883_u53D8_u91CF_u914D_u7F6E" class="headerlink" title="<code>MongoDB PATH</code>环境变量配置"></a><code>MongoDB PATH</code>环境变量配置</h3><p>将<code>mongodb</code>添加到环境变量中：<code>$ vim ~/.zshrc</code>，添加如下命令行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$PATH</span>:/usr/local/mongodb/bin"</span></span><br></pre></td></tr></table></figure>
 <p>当然前提是将解压出来的文件移到<code>/usr/local/mongodb</code>目录中。版本3.0.7</p>
 <p>然后就可以在终端直接使用<code>MongoDB</code>命令，而不用每次都进入<code>MongoDB</code>所在文件夹的目录啦。</p>
 <p>比如，启动<code>MongoDB</code>，直接在终端输入 <code>$ mongo</code> 就可以启动啦</p>
@@ -496,7 +493,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js-MongoDb-Mongoose/">Node.js,MongoDb,Mongoose</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js-MongoDb-Mongoose/">Node.js,MongoDb, Mongoose</a></li></ul>
 	</div>
 
       
@@ -611,8 +608,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##安装和使用babel</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install --global babel</span><br></pre></td></tr></table></figure>
+        <h1 id="u5B89_u88C5_u548C_u4F7F_u7528babel"><a href="#u5B89_u88C5_u548C_u4F7F_u7528babel" class="headerlink" title="安装和使用babel"></a>安装和使用babel</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install --global babel</span><br></pre></td></tr></table></figure>
 <p><br></p>
 <p>在mac终端使用<code>babel-node</code>可以直接在终端执行es6代码。</p>
 <p><br></p>
@@ -683,8 +679,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###React Native提供了哪些能力</p>
-<ul>
+        <h3 id="React_Native_u63D0_u4F9B_u4E86_u54EA_u4E9B_u80FD_u529B"><a href="#React_Native_u63D0_u4F9B_u4E86_u54EA_u4E9B_u80FD_u529B" class="headerlink" title="<code>React Native</code>提供了哪些能力"></a><code>React Native</code>提供了哪些能力</h3><ul>
 <li><p>基于原生UI组件</p>
 </li>
 <li><p>手势识别</p>
@@ -759,8 +754,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##callee和caller</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee);<span class="comment">//指向拥有这个arguments对象的函数，即inner()</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee.caller);<span class="comment">//这个属性保存着调用当前函数的函数的引用,即outer()</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(inner.caller);<span class="comment">//[Function: outer]</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    inner();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">outer();</span><br></pre></td></tr></table></figure>
+        <h2 id="callee_u548Ccaller"><a href="#callee_u548Ccaller" class="headerlink" title="<code>callee</code>和<code>caller</code>"></a><code>callee</code>和<code>caller</code></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee);<span class="comment">//指向拥有这个arguments对象的函数，即inner()</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee.caller);<span class="comment">//这个属性保存着调用当前函数的函数的引用,即outer()</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(inner.caller);<span class="comment">//[Function: outer]</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    inner();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">outer();</span><br></pre></td></tr></table></figure>
 <p><code>callee</code>放回正在执行的函数本身的引用，它是<code>arguments</code>的一个属性</p>
 <p><code>caller</code> 返回一个函数的引用，这个函数调用了当前的函数。</p>
 <p>严格模式下，不允许访问<code>arguments.callee</code>和<code>arguments.caller</code>属性，主要体现在<code>arguments.[[Get]]</code>内部方法<br>
@@ -821,30 +815,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###bower相关</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo npm install bower -g</span><br></pre></td></tr></table></figure>
+        <h3 id="bower_u76F8_u5173"><a href="#bower_u76F8_u5173" class="headerlink" title="<code>bower</code>相关"></a><code>bower</code>相关</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo npm install bower -g</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>安装指定版本库/框架</p>
 </blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">bower install jquery#2.0.3</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower install jquery#2.0.3</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>更新所有bower包</p>
 </blockquote>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">bower </span>update</span><br></pre></td></tr></table></figure>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>update</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>搜索网上的相关包</p>
 </blockquote>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">bower serch jquery <span class="comment">//就会搜索和jQuery所有相关包，插件等</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower serch jquery <span class="comment">//就会搜索和jQuery所有相关包，插件等</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>dependencies</p>
 </blockquote>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># <span class="operator"><span class="keyword">install</span> <span class="keyword">package</span> <span class="keyword">and</span> <span class="keyword">add</span> it <span class="keyword">to</span> bower.<span class="keyword">json</span> dependencies</span><br><span class="line"></span><br><span class="line">$ bower <span class="keyword">install</span> &lt;<span class="keyword">package</span>&gt; <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
 <p><br></p>
-<p>###<code>Node</code>相关</p>
-<blockquote>
+<h3 id="Node_u76F8_u5173"><a href="#Node_u76F8_u5173" class="headerlink" title="<code>Node</code>相关"></a><code>Node</code>相关</h3><blockquote>
 <p><code>nvm</code> 安装</p>
 </blockquote>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">curl -<span class="keyword">o</span>- http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/creationix/nvm/v0.<span class="number">29.0</span>/install.<span class="keyword">sh</span> | bash</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -<span class="keyword">o</span>- http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/creationix/nvm/v0.<span class="number">29.0</span>/install.<span class="keyword">sh</span> | bash</span><br></pre></td></tr></table></figure>
       
     </div>
     
