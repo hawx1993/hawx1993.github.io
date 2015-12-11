@@ -19,7 +19,7 @@
 类式继承（构造函数间的继承）
 由于js不像java那样是真正面向对象的语言，js是基于对象的，它没有类的概念。所以，要想实现继承，可以用js的原型prototype机制或者用apply和call方法去实现
 在面向对象的语言中，我们使用类来创建一个自定义对象。然而js中所有事物都是对象，那么用什么办法来创建自定义对象呢？这就需">
-<meta property="og:updated_time" content="2015-12-11T04:45:13.000Z">
+<meta property="og:updated_time" content="2015-12-11T04:50:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript继承方式详解">
 <meta name="twitter:description" content="js继承的概念js里常用的如下两种继承方式：
@@ -246,84 +246,22 @@
 <p>我们可以简单的把<code>prototype</code>看做是一个模版，新创建的自定义对象都是这个模版（<code>prototype</code>）的一个拷贝 （实际上不是拷贝而是链接，只不过这种链接是不可见，新实例化的对象内部有一个看不见的<code>__Proto__</code>指针，指向原型对象）。</p>
 <p><code>js</code>可以通过构造函数和原型的方式模拟实现类的功能。 另外，<code>js</code>类式继承的实现也是依靠原型链来实现的。</p>
 <a id="more"></a>
-<h2 id="u539F_u578B_u5F0F_u7EE7_u627F_u4E0E_u7C7B_u5F0F_u7EE7_u627F"><a href="#u539F_u578B_u5F0F_u7EE7_u627F_u4E0E_u7C7B_u5F0F_u7EE7_u627F" class="headerlink" title="原型式继承与类式继承"></a>原型式继承与类式继承</h2><p><code>类式继承</code>是在子类型构造函数的内部调用超类型的构造函数。<br>严格的类式继承并不是很常见，一般都是组合着用：</p>
-<pre><code>function Super(){
-    this.colors=[&quot;red&quot;,&quot;blue&quot;];
-}
-
-function Sub(){
-    Super.call(this);
-}
-</code></pre><p><code>原型式继承</code>是借助已有的对象创建新的对象，将子类的原型指向父类，就相当于加入了父类这条原型链</p>
+<h2 id="u539F_u578B_u5F0F_u7EE7_u627F_u4E0E_u7C7B_u5F0F_u7EE7_u627F"><a href="#u539F_u578B_u5F0F_u7EE7_u627F_u4E0E_u7C7B_u5F0F_u7EE7_u627F" class="headerlink" title="原型式继承与类式继承"></a>原型式继承与类式继承</h2><p><code>类式继承</code>是在子类型构造函数的内部调用超类型的构造函数。<br>严格的类式继承并不是很常见，一般都是组合着用：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Super</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.colors=[<span class="string">"red"</span>,<span class="string">"blue"</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Sub</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Super.call(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>原型式继承</code>是借助已有的对象创建新的对象，将子类的原型指向父类，就相当于加入了父类这条原型链</p>
 <h2 id="u539F_u578B_u94FE_u7EE7_u627F"><a href="#u539F_u578B_u94FE_u7EE7_u627F" class="headerlink" title="原型链继承"></a>原型链继承</h2><p>为了让子类继承父类的属性（也包括方法），首先需要定义一个构造函数。然后，将父类的新实例赋值给构造函数的原型。代码如下：</p>
-<pre><code>&lt;script&gt;
-    function Parent(){
-        this.name = &apos;mike&apos;;
-    }
-
-    function Child(){
-        this.age = 12;
-    }
-    Child.prototype = new Parent();//Child继承Parent，通过原型，形成链条
-
-    var test = new Child();
-    alert(test.age);
-    alert(test.name);//得到被继承的属性
-    //继续原型链继承
-    function Brother(){   //brother构造
-        this.weight = 60;
-    }
-    Brother.prototype = new Child();//继续原型链继承
-    var brother = new Brother();
-    alert(brother.name);//继承了Parent和Child,弹出mike
-    alert(brother.age);//弹出12
-&lt;/script&gt;
-</code></pre><p>以上原型链继承还缺少一环，那就是<code>Object</code>，所有的构造函数都继承自<code>Object</code>。而继承<code>Object</code>是自动完成的，并不需要我们自己手动继承，那么他们的从属关系是怎样的呢？</p>
-<p>###确定原型和实例的关系<br>可以通过两种方式来确定原型和实例之间的关系。操作符<code>instanceof</code>和<code>isPrototypeof()</code>方法：</p>
-<pre><code>alert(brother instanceof Object)//true
-alert(test instanceof Brother);//false,test 是brother的超类
-alert(brother instanceof Child);//true
-alert(brother instanceof Parent);//true
-</code></pre><p>只要是原型链中出现过的原型，都可以说是该原型链派生的实例的原型，因此，<code>isPrototypeof()</code>方法也会返回<code>true</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="actionscript"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Parent</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = <span class="string">'mike'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Child</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = <span class="number">12</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Child.prototype = <span class="keyword">new</span> Parent();<span class="comment">//Child继承Parent，通过原型，形成链条</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> test = <span class="keyword">new</span> Child();</span><br><span class="line">    alert(test.age);</span><br><span class="line">    alert(test.name);<span class="comment">//得到被继承的属性</span></span><br><span class="line">    <span class="comment">//继续原型链继承</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Brother</span><span class="params">()</span></span>&#123;   <span class="comment">//brother构造</span></span><br><span class="line">        <span class="keyword">this</span>.weight = <span class="number">60</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Brother.prototype = <span class="keyword">new</span> Child();<span class="comment">//继续原型链继承</span></span><br><span class="line">    <span class="keyword">var</span> brother = <span class="keyword">new</span> Brother();</span><br><span class="line">    alert(brother.name);<span class="comment">//继承了Parent和Child,弹出mike</span></span><br><span class="line">    alert(brother.age);<span class="comment">//弹出12</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>以上原型链继承还缺少一环，那就是<code>Object</code>，所有的构造函数都继承自<code>Object</code>。而继承<code>Object</code>是自动完成的，并不需要我们自己手动继承，那么他们的从属关系是怎样的呢？</p>
+<p>###确定原型和实例的关系<br>可以通过两种方式来确定原型和实例之间的关系。操作符<code>instanceof</code>和<code>isPrototypeof()</code>方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alert(brother <span class="keyword">instanceof</span> <span class="built_in">Object</span>)<span class="comment">//true</span></span><br><span class="line">alert(test <span class="keyword">instanceof</span> Brother);<span class="comment">//false,test 是brother的超类</span></span><br><span class="line">alert(brother <span class="keyword">instanceof</span> Child);<span class="comment">//true</span></span><br><span class="line">alert(brother <span class="keyword">instanceof</span> Parent);<span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+<p>只要是原型链中出现过的原型，都可以说是该原型链派生的实例的原型，因此，<code>isPrototypeof()</code>方法也会返回<code>true</code></p>
 <p>在<code>js</code>中，被继承的函数称为超类型（父类，基类也行），继承的函数称为子类型（子类，派生类）。使用原型继承主要由两个问题：<br>一是字面量重写原型会中断关系，使用引用类型的原型，并且子类型还无法给超类型传递参数。</p>
 <p>伪类解决引用共享和超类型无法传参的问题，我们可以采用“<strong>借用构造函数</strong>”技术</p>
 <p>###借用构造函数（类式继承）</p>
-<pre><code>&lt;script&gt;
-    function Parent(age){
-        this.name = [&apos;mike&apos;,&apos;jack&apos;,&apos;smith&apos;];
-        this.age = age;
-    }
-
-    function Child(age){
-        Parent.call(this,age);
-    }
-    var test = new Child(21);
-    alert(test.age);//21
-    alert(test.name);//mike,jack,smith
-    test.name.push(&apos;bill&apos;);
-    alert(test.name);//mike,jack,smith,bill
-&lt;/script&gt;
-</code></pre><p>借用构造函数虽然解决了刚才两种问题，但没有原型，则复用无从谈起，所以我们需要<code>原型链+借用构造函数</code>的模式，这种模式称为<strong>组合继承</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="actionscript"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Parent</span><span class="params">(age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = [<span class="string">'mike'</span>,<span class="string">'jack'</span>,<span class="string">'smith'</span>];</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Child</span><span class="params">(age)</span></span>&#123;</span><br><span class="line">        Parent.call(<span class="keyword">this</span>,age);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> test = <span class="keyword">new</span> Child(<span class="number">21</span>);</span><br><span class="line">    alert(test.age);<span class="comment">//21</span></span><br><span class="line">    alert(test.name);<span class="comment">//mike,jack,smith</span></span><br><span class="line">    test.name.push(<span class="string">'bill'</span>);</span><br><span class="line">    alert(test.name);<span class="comment">//mike,jack,smith,bill</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>借用构造函数虽然解决了刚才两种问题，但没有原型，则复用无从谈起，所以我们需要<code>原型链+借用构造函数</code>的模式，这种模式称为<strong>组合继承</strong></p>
 <p>###组合继承</p>
-<pre><code>&lt;script&gt;
-    function Parent(age){
-        this.name = [&apos;mike&apos;,&apos;jack&apos;,&apos;smith&apos;];
-        this.age = age;
-    }
-    Parent.prototype.run = function () {
-        return this.name  + &apos; are both&apos; + this.age;
-    };
-    function Child(age){
-        Parent.call(this,age);//对象冒充，给超类型传参
-    }
-    Child.prototype = new Parent();//原型链继承
-    var test = new Child(21);//写new Parent(21)也行
-    alert(test.run());//mike,jack,smith are both21
-&lt;/script&gt;
-</code></pre><p>组合式继承是比较常用的一种继承方法，其背后的思路是 使用原型链实现对原型属性和方法的继承，而通过借用构造函数来实现对实例属性的继承。这样，既通过在原型上定义方法实现了函数复用，又保证每个实例都有它自己的属性。</p>
-<p><code>call()</code>的用法：调用一个对象的一个方法，以另一个对象替换当前对象。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="actionscript"></span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">Parent</span><span class="params">(age)</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.name = [<span class="string">'mike'</span>,<span class="string">'jack'</span>,<span class="string">'smith'</span>];</span><br><span class="line">            <span class="keyword">this</span>.age = age;</span><br><span class="line">        &#125;</span><br><span class="line">        Parent.prototype.run = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.name  + <span class="string">' are both'</span> + <span class="keyword">this</span>.age;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">Child</span><span class="params">(age)</span></span>&#123;</span><br><span class="line">            Parent.call(<span class="keyword">this</span>,age);<span class="comment">//对象冒充，给超类型传参</span></span><br><span class="line">        &#125;</span><br><span class="line">        Child.prototype = <span class="keyword">new</span> Parent();<span class="comment">//原型链继承</span></span><br><span class="line">        <span class="keyword">var</span> test = <span class="keyword">new</span> Child(<span class="number">21</span>);<span class="comment">//写new Parent(21)也行</span></span><br><span class="line">        alert(test.run());<span class="comment">//mike,jack,smith are both21</span></span><br><span class="line">    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">```    </span><br><span class="line">组合式继承是比较常用的一种继承方法，其背后的思路是 使用原型链实现对原型属性和方法的继承，而通过借用构造函数来实现对实例属性的继承。这样，既通过在原型上定义方法实现了函数复用，又保证每个实例都有它自己的属性。</span><br><span class="line"></span><br><span class="line">`call()`的用法：调用一个对象的一个方法，以另一个对象替换当前对象。</span><br></pre></td></tr></table></figure>
 <pre><code>call([thisObj[,arg1[, arg2[, [,.argN]]]]])
-</code></pre><h2 id="u539F_u578B_u5F0F_u7EE7_u627F"><a href="#u539F_u578B_u5F0F_u7EE7_u627F" class="headerlink" title="原型式继承"></a>原型式继承</h2><p>这种继承借助原型并基于已有的对象创建新对象，同时还不用创建自定义类型的方式称为<code>原型式继承</code></p>
+</code></pre><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">原型式继承</span><br><span class="line">-----</span></span><br><span class="line">这种继承借助原型并基于已有的对象创建新对象，同时还不用创建自定义类型的方式称为<span class="code">`原型式继承`</span></span><br></pre></td></tr></table></figure>
 <pre><code>&lt;script&gt;
      function obj(o){
          function F(){}
@@ -348,8 +286,7 @@ alert(brother instanceof Parent);//true
     alert(b2.name);//trigkit4
     alert(b2.arr);//brother,sister,baba,parents
 &lt;/script&gt;
-</code></pre><p>原型式继承首先在<code>obj()</code>函数内部创建一个临时性的构造函数 ，然后将传入的对象作为这个构造函数的原型，最后返回这个临时类型的一个新实例。</p>
-<p>###寄生式继承<br>这种继承方式是把原型式+<a href="http://segmentfault.com/blog/trigkit4/1190000000662547#articleHeader15" target="_blank" rel="external">工厂模式</a>结合起来，目的是为了封装创建的过程。</p>
+</code></pre><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">原型式继承首先在<span class="code">`obj()`</span>函数内部创建一个临时性的构造函数 ，然后将传入的对象作为这个构造函数的原型，最后返回这个临时类型的一个新实例。</span><br><span class="line"></span><br><span class="line"><span class="header">###寄生式继承</span></span><br><span class="line">这种继承方式是把原型式+[<span class="link_label">工厂模式</span>][<span class="link_reference">3</span>]结合起来，目的是为了封装创建的过程。</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;script&gt;
     function create(o){
         var f= obj(o);
@@ -359,7 +296,7 @@ alert(brother instanceof Parent);//true
         return f;
     }
 &lt;/script&gt;
-</code></pre><p>###组合式继承的小问题<br>组合式继承是<code>js</code>最常用的继承模式，但组合继承的超类型在使用过程中会被调用两次；一次是创建子类型的时候，另一次是在子类型构造函数的内部</p>
+</code></pre><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">###组合式继承的小问题</span><br><span class="line">组合式继承是<span class="escape">`j</span>s<span class="escape">`最</span>常用的继承模式，但组合继承的超类型在使用过程中会被调用两次；一次是创建子类型的时候，另一次是在子类型构造函数的内部</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;script&gt;
     function Parent(name){
         this.name = name;
@@ -377,8 +314,7 @@ alert(brother instanceof Parent);//true
 
     Child.prototype = new Parent();//第一次调用
 &lt;/script&gt;
-</code></pre><p>以上代码是之前的组合继承，那么寄生组合继承，解决了两次调用的问题。</p>
-<p>###寄生组合式继承</p>
+</code></pre><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">以上代码是之前的组合继承，那么寄生组合继承，解决了两次调用的问题。</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">###寄生组合式继承</span></span><br></pre></td></tr></table></figure>
 <pre><code>&lt;script&gt;
     function obj(o){
         function F(){}
@@ -414,7 +350,7 @@ alert(brother instanceof Parent);//true
     var test2 = new Child(&apos;jack&apos;,22);
     alert(test2.arr);//引用问题解决
 &lt;/script&gt;
-</code></pre><h2 id="call_u548Capply"><a href="#call_u548Capply" class="headerlink" title="call和apply"></a>call和apply</h2><p>全局函数<code>apply</code>和<code>call</code>可以用来改变函数中<code>this</code>的指向，如下：</p>
+</code></pre><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">call和apply</span><br><span class="line">----------</span></span><br><span class="line">全局函数<span class="code">`apply`</span>和<span class="code">`call`</span>可以用来改变函数中<span class="code">`this`</span>的指向，如下：</span><br></pre></td></tr></table></figure>
 <pre><code>// 定义一个全局函数
    function foo() {
        console.log(this.fruit);
@@ -431,7 +367,8 @@ alert(brother instanceof Parent);//true
    foo.apply(window);  // &quot;apple&quot;,此时this等于window
    // 此时foo中的this === pack
    foo.apply(pack);    // &quot;orange&quot;
-</code></pre>
+</code></pre><p>```</p>
+
       
     </div>
     
