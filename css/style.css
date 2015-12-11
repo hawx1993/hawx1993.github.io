@@ -478,6 +478,17 @@ a {
   -ms-transition: 0.3s;
   transition: 0.3s;
 }
+@-webkit-keyframes ripple-animation {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 #258fb8;
+    box-shadow: 0 0 0 0 #258fb8;
+  }
+  100% {
+/* border: 10px solid red; */
+    -webkit-box-shadow: 0 0 0 10px rgba(37,143,184,0);
+    box-shadow: 0 0 0 10px rgba(37,143,184,0);
+  }
+}
 #header {
   width: 100%;
 }
@@ -488,8 +499,6 @@ a {
   color: #b0a0aa;
 }
 #header .profilepic {
-  text-align: center;
-  display: block;
   border: 5px solid #fff;
   -webkit-border-radius: 300px;
   border-radius: 300px;
@@ -505,15 +514,20 @@ a {
   -webkit-box-pack: center;
   -webkit-box-align: center;
 }
-@-webkit-keyframes ripple-animation {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 #e4684d;
-    box-shadow: 0 0 0 0 #e4684d;
-  }
-  100% {
-    -webkit-box-shadow: 0 0 0 110px rgba(228,34,77,0);
-    box-shadow: 0 0 0 110px rgba(228,34,77,0);
-  }
+#header .profilepic:hover {
+  -webkit-animation: ripple-animation 0.5s ease-in-out;
+  -moz-animation: ripple-animation 0.5s ease-in-out;
+  -ms-animation: ripple-animation 0.5s ease-in-out;
+  animation: ripple-animation 0.5s ease-in-out;
+  -webkit-animation: ripple-animation 0.5s ease-in-out;
+}
+#header .profilepic:after {
+  content: '';
+  display: block;
+  width: 124px;
+  height: 124px;
+  -webkit-border-radius: 200px;
+  border-radius: 200px;
 }
 #header .profilepic img {
   width: 20%;
@@ -527,61 +541,6 @@ a {
   width: 100%;
   height: 100%;
   opacity: 1;
-}
-#header .profilepic img:hover:after {
-  -webkit-animation: ripple-animation 0.5s ease-in-out;
-  -moz-animation: ripple-animation 0.5s ease-in-out;
-  -ms-animation: ripple-animation 0.5s ease-in-out;
-  animation: ripple-animation 0.5s ease-in-out;
-  -webkit-animation: ripple-animation 0.5s ease-in-out;
-}
-#header .profilepic img:after {
-  content: '';
-  display: block;
-  width: 124px;
-  height: 124px;
-  -webkit-border-radius: 100px;
-  border-radius: 100px;
-}
-@-moz-keyframes ripple-animation {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 #e4684d;
-    box-shadow: 0 0 0 0 #e4684d;
-  }
-  100% {
-    -webkit-box-shadow: 0 0 0 110px rgba(228,34,77,0);
-    box-shadow: 0 0 0 110px rgba(228,34,77,0);
-  }
-}
-@-webkit-keyframes ripple-animation {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 #e4684d;
-    box-shadow: 0 0 0 0 #e4684d;
-  }
-  100% {
-    -webkit-box-shadow: 0 0 0 110px rgba(228,34,77,0);
-    box-shadow: 0 0 0 110px rgba(228,34,77,0);
-  }
-}
-@-o-keyframes ripple-animation {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 #e4684d;
-    box-shadow: 0 0 0 0 #e4684d;
-  }
-  100% {
-    -webkit-box-shadow: 0 0 0 110px rgba(228,34,77,0);
-    box-shadow: 0 0 0 110px rgba(228,34,77,0);
-  }
-}
-@keyframes ripple-animation {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 #e4684d;
-    box-shadow: 0 0 0 0 #e4684d;
-  }
-  100% {
-    -webkit-box-shadow: 0 0 0 110px rgba(228,34,77,0);
-    box-shadow: 0 0 0 110px rgba(228,34,77,0);
-  }
 }
 #header .header-subtitle {
   text-align: center;
@@ -781,6 +740,50 @@ a {
 }
 #disqus_thread {
   padding: 0 40px;
+}
+@-moz-keyframes ripple-animation {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 #258fb8;
+    box-shadow: 0 0 0 0 #258fb8;
+  }
+  100% {
+/* border: 10px solid red; */
+    -webkit-box-shadow: 0 0 0 10px rgba(37,143,184,0);
+    box-shadow: 0 0 0 10px rgba(37,143,184,0);
+  }
+}
+@-webkit-keyframes ripple-animation {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 #258fb8;
+    box-shadow: 0 0 0 0 #258fb8;
+  }
+  100% {
+/* border: 10px solid red; */
+    -webkit-box-shadow: 0 0 0 10px rgba(37,143,184,0);
+    box-shadow: 0 0 0 10px rgba(37,143,184,0);
+  }
+}
+@-o-keyframes ripple-animation {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 #258fb8;
+    box-shadow: 0 0 0 0 #258fb8;
+  }
+  100% {
+/* border: 10px solid red; */
+    -webkit-box-shadow: 0 0 0 10px rgba(37,143,184,0);
+    box-shadow: 0 0 0 10px rgba(37,143,184,0);
+  }
+}
+@keyframes ripple-animation {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 #258fb8;
+    box-shadow: 0 0 0 0 #258fb8;
+  }
+  100% {
+/* border: 10px solid red; */
+    -webkit-box-shadow: 0 0 0 10px rgba(37,143,184,0);
+    box-shadow: 0 0 0 10px rgba(37,143,184,0);
+  }
 }
 .archives-wrap {
   position: relative;
