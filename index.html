@@ -217,9 +217,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="js_u7EE7_u627F_u7684_u6982_u5FF5"><a href="#js_u7EE7_u627F_u7684_u6982_u5FF5" class="headerlink" title="js继承的概念"></a>js继承的概念</h2><p><code>js</code>里常用的如下两种继承方式：</p>
-<pre><code>原型链继承（对象间的继承）
-类式继承（构造函数间的继承）
-</code></pre><p>由于<code>js</code>不像<code>java</code>那样是真正面向对象的语言，<code>js</code>是基于对象的，它没有类的概念。所以，要想实现继承，可以用<code>js</code>的原型<a href="http://segmentfault.com/blog/trigkit4/1190000000662547">prototype</a>机制或者用<code>apply</code>和<code>call</code>方法去实现</p>
+<ul>
+<li>原型链继承（对象间的继承）</li>
+<li>类式继承（构造函数间的继承）</li>
+</ul>
+<p>由于<code>js</code>不像<code>java</code>那样是真正面向对象的语言，<code>js</code>是基于对象的，它没有类的概念。所以，要想实现继承，可以用<code>js</code>的原型<a href="http://segmentfault.com/blog/trigkit4/1190000000662547">prototype</a>机制或者用<code>apply</code>和<code>call</code>方法去实现</p>
 <p>在面向对象的语言中，我们使用<code>类</code>来创建一个<strong>自定义对象</strong>。然而<code>js</code>中所有事物都是对象，那么用什么办法来创建自定义对象呢？这就需要用到<code>js</code>的<a href="http://segmentfault.com/blog/trigkit4/1190000000662547">原型</a>：</p>
 <p>我们可以简单的把<code>prototype</code>看做是一个模版，新创建的自定义对象都是这个模版（<code>prototype</code>）的一个拷贝 （实际上不是拷贝而是链接，只不过这种链接是不可见，新实例化的对象内部有一个看不见的<code>__Proto__</code>指针，指向原型对象）。</p>
 <p><code>js</code>可以通过构造函数和原型的方式模拟实现类的功能。 另外，<code>js</code>类式继承的实现也是依靠原型链来实现的。</p>
