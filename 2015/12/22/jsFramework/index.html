@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>关于一些前端js框架的源码研究 | 前端博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="underscore.js源码Underscore.js 没有对原生 JavaScript 对象进行扩展,而是通过调用 _() 方法进行封装，一旦封装完成，原生 JavaScript 对象便成为一个 Underscore 对象。
+判断给定变量是否是对象12345// Is a given variable an object?    _.isObject = function(obj) &amp;#123">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于一些前端js框架的源码研究">
+<meta property="og:url" content="hawx1993.github.io/2015/12/22/jsFramework/index.html">
+<meta property="og:site_name" content="前端博客">
+<meta property="og:description" content="underscore.js源码Underscore.js 没有对原生 JavaScript 对象进行扩展,而是通过调用 _() 方法进行封装，一旦封装完成，原生 JavaScript 对象便成为一个 Underscore 对象。
+判断给定变量是否是对象12345// Is a given variable an object?    _.isObject = function(obj) &amp;#123">
+<meta property="og:image" content="hawx1993.github.io/img/bVlmSc">
+<meta property="og:updated_time" content="2015-12-22T02:45:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于一些前端js框架的源码研究">
+<meta name="twitter:description" content="underscore.js源码Underscore.js 没有对原生 JavaScript 对象进行扩展,而是通过调用 _() 方法进行封装，一旦封装完成，原生 JavaScript 对象便成为一个 Underscore 对象。
+判断给定变量是否是对象12345// Is a given variable an object?    _.isObject = function(obj) &amp;#123">
+  
+    <link rel="alternative" href="/atom.xml" title="前端博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/me.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">trigkit4</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">trigkit4 | 前端笔记</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/diary">技术日记</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/hawx1993" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/weibo.com/hawx1993" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/trigkit@163.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/ECMAScript6-JavaScript/" style="font-size: 10px;">ECMAScript6,JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Node-js-MongoDb-Mongoose/" style="font-size: 10px;">Node.js,MongoDb, Mongoose</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/jade/" style="font-size: 10px;">jade</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/js-前端/" style="font-size: 10px;">js,前端</a> <a href="/tags/react-native-reactjs/" style="font-size: 10px;">react-native,reactjs</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://segmentfault.com/u/trigkit4">我的sf</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">大二开始接触前端开发，大三在美团实习。喜欢简洁风格，Mac重度用户。喜爱折腾的前端工程师一枚</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">trigkit4</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/me.jpeg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">trigkit4</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">trigkit4 | 前端笔记</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/diary">技术日记</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/hawx1993" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/weibo.com/hawx1993" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/trigkit@163.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-jsFramework" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/22/jsFramework/" class="article-date">
+  	<time datetime="2015-12-22T02:35:22.000Z" itemprop="datePublished">2015-12-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于一些前端js框架的源码研究
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js-前端/">js,前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="underscore-js_u6E90_u7801"><a href="#underscore-js_u6E90_u7801" class="headerlink" title="underscore.js源码"></a>underscore.js源码</h2><p><code>Underscore.js</code> 没有对原生 <code>JavaScript</code> 对象进行扩展,而是通过调用 <code>_()</code> 方法进行封装，一旦封装完成，原生 <code>JavaScript</code> 对象便成为一个 <code>Underscore</code> 对象。</p>
+<h3 id="u5224_u65AD_u7ED9_u5B9A_u53D8_u91CF_u662F_u5426_u662F_u5BF9_u8C61"><a href="#u5224_u65AD_u7ED9_u5B9A_u53D8_u91CF_u662F_u5426_u662F_u5BF9_u8C61" class="headerlink" title="判断给定变量是否是对象"></a>判断给定变量是否是对象</h3><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Is a given variable an object?</span></span><br><span class="line">    _.isObject = function(obj) &#123;</span><br><span class="line">        var <span class="keyword">type</span> = <span class="keyword">typeof</span> obj;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">type</span> === <span class="string">'function</span>' || <span class="keyword">type</span> === <span class="string">'object</span>' &amp;&amp; !!obj;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+<p>这是<code>underscore.js</code>的判断给定变量是否是<code>object</code>的一段源码。 我们知道<code>typeof</code>会返回如下六个值：</p>
+<pre><code>1. &apos;undefined&apos; --- 这个值未定义；
+2. &apos;boolean&apos;    --- 这个值是布尔值；
+3. &apos;string&apos;        --- 这个值是字符串；
+4. &apos;number&apos;     --- 这个值是数值；
+5. &apos;object&apos;       --- 这个值是对象或null；
+6. &apos;function&apos;    --- 这个值是函数。  
+</code></pre><p>而<code>&amp;&amp;</code>的优先级要高与<code>||</code>。<code>!!</code>的作用相当于<code>Boolean()</code>，将其转换为布尔值。<br><a id="more"></a></p>
+<h3 id="u5224_u65AD_u7ED9_u5B9A_u503C_u662F_u5426_u662FDOM_u5143_u7D20"><a href="#u5224_u65AD_u7ED9_u5B9A_u503C_u662F_u5426_u662FDOM_u5143_u7D20" class="headerlink" title="判断给定值是否是DOM元素"></a>判断给定值是否是DOM元素</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Is a given value a DOM element?</span></span><br><span class="line">    _.isElement = <span class="function"><span class="keyword">function</span><span class="params">(obj)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> !!(obj &amp;&amp; obj.nodeType === <span class="number">1</span>);</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+<p>同样<code>!!</code>相当于<code>Boolean()</code>的作用，<code>nodeType === 1</code>则说明是元素节点，属性<code>attr</code>是2 ，文本<code>text</code>是3   </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">p</span> <span class="attribute">id</span>=<span class="value">"test"</span>&gt;</span>测试<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">    <span class="keyword">var</span> t = <span class="built_in">document</span>.getElementById(<span class="string">'test'</span>);</span><br><span class="line">    alert(t.nodeType);<span class="comment">//1</span></span><br><span class="line">    alert(t.nodeName);<span class="comment">//p</span></span><br><span class="line">    alert(t.nodeValue);<span class="comment">//null</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>firstChild</code>属性</p>
+</blockquote>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> t = <span class="built_in">document</span>.getElementById(<span class="string">'test'</span>).firstChild;</span><br><span class="line">alert(t.nodeType);<span class="comment">//3</span></span><br><span class="line">alert(t.nodeName);<span class="comment">//#test</span></span><br><span class="line">alert(t.nodeValue);<span class="comment">//测试</span></span><br></pre></td></tr></table></figure>
+<p>文本节点也算是一个节点，所以p的子节点是文本节点，所以返回3</p>
+<h2 id="zepto_u6E90_u7801"><a href="#zepto_u6E90_u7801" class="headerlink" title="zepto源码"></a>zepto源码</h2><h3 id="u5224_u65AD_u662F_u5426_u662F_u6570_u7EC4"><a href="#u5224_u65AD_u662F_u5426_u662F_u6570_u7EC4" class="headerlink" title="判断是否是数组"></a>判断是否是数组</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    isArray = <span class="built_in">Array</span>.isArray ||</span><br><span class="line">                <span class="function"><span class="keyword">function</span>(<span class="params">object</span>)</span>&#123; <span class="keyword">return</span> object <span class="keyword">instanceof</span> <span class="built_in">Array</span> &#125;   </span><br><span class="line"></span><br><span class="line"><span class="string">`Array.isArray()`</span> 方法：如果一个对象是数组就返回<span class="string">`true`</span>，如果不是则返回<span class="string">`false`</span>。</span><br><span class="line"></span><br><span class="line"><span class="string">`instanceof`</span> 用于判断一个变量是否某个对象的实例，如 </span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> a= [];</span><br><span class="line">    alert(a <span class="keyword">instanceof</span> <span class="built_in">Array</span>);<span class="comment">//返回 true</span></span><br></pre></td></tr></table></figure>
+<p>同时 <code>alert(a instanceof Object)</code> 也会返回 <code>true</code> </p>
+<p><code>isArray</code> 返回布尔值，如果<code>Array.isArray</code>为<code>true</code>，则返回<code>true</code>，否则返回<code>object instanceof Array</code>的结果。</p>
+<h3 id="u6570_u636E_u7C7B_u578B_u5224_u65AD"><a href="#u6570_u636E_u7C7B_u578B_u5224_u65AD" class="headerlink" title="数据类型判断"></a>数据类型判断</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class2type = &#123;&#125;,</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">type</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> obj == <span class="literal">null</span> ? <span class="built_in">String</span>(obj) :</span><br><span class="line">        class2type[toString.call(obj)] || <span class="string">"object"</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isFunction</span>(<span class="params">value</span>) </span>&#123; <span class="keyword">return</span> type(value) == <span class="string">"function"</span> &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isWindow</span>(<span class="params">obj</span>)     </span>&#123; <span class="keyword">return</span> obj != <span class="literal">null</span> &amp;&amp; obj == obj.window &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isDocument</span>(<span class="params">obj</span>)   </span>&#123; <span class="keyword">return</span> obj != <span class="literal">null</span> &amp;&amp; obj.nodeType == obj.DOCUMENT_NODE &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isObject</span>(<span class="params">obj</span>)     </span>&#123; <span class="keyword">return</span> type(obj) == <span class="string">"object"</span> &#125;</span><br></pre></td></tr></table></figure>
+<p><code>class2type</code>是一个空对象，实际上一个什么都没有的空对象是这样创建的<code>Object.create(null);</code>  </p>
+<p>我们可以通过<code>Object.prototype.toString.call()</code>方法来判断数据类型，例如：</p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">console.<span class="built_in">log</span>(Object.prototype.<span class="built_in">toString</span>.<span class="built_in">call</span>(<span class="number">123</span>)) <span class="comment">//[object Number]  </span></span><br><span class="line">console.<span class="built_in">log</span>(Object.prototype.<span class="built_in">toString</span>.<span class="built_in">call</span>(<span class="string">'123'</span>)) <span class="comment">//[object String]    </span></span><br><span class="line">console.<span class="built_in">log</span>(Object.prototype.<span class="built_in">toString</span>.<span class="built_in">call</span>(undefined)) <span class="comment">//[object Undefined]                         </span></span><br><span class="line">console.<span class="built_in">log</span>(Object.prototype.<span class="built_in">toString</span>.<span class="built_in">call</span>(<span class="literal">true</span>)) <span class="comment">//[object Boolean]                                      </span></span><br><span class="line">console.<span class="built_in">log</span>(Object.prototype.<span class="built_in">toString</span>.<span class="built_in">call</span>(&#123;&#125;)) <span class="comment">//[object Object]                                      </span></span><br><span class="line">console.<span class="built_in">log</span>(Object.prototype.<span class="built_in">toString</span>.<span class="built_in">call</span>([])) <span class="comment">//[object Array]             </span></span><br><span class="line">console.<span class="built_in">log</span>(Object.prototype.<span class="built_in">toString</span>.<span class="built_in">call</span>(function()&#123;&#125;)) <span class="comment">//[object Function]</span></span><br></pre></td></tr></table></figure>
+<p>首先如果参数<code>obj</code>是<code>undefined</code>或<code>null</code>，则通过<code>String(obj)</code>转换为对应的原始字符串“<code>undefined</code>”或“<code>null</code>”。</p>
+<p>然后<code>class2type[toString.call(obj)]</code>首先借用<code>Object</code>的原型方法<code>toString()</code>来获取<code>obj</code>的字符串表示，返回值的形式是 <code>[object class]</code>，其中的<code>class</code>是内部对象类。</p>
+<p>然后从对象<code>class2type</code>中取出<code>[object class]</code>对应的小写字符串并返回；如果未取到则一律返回“<code>object</code>。</p>
+<h3 id="get_u65B9_u6CD5"><a href="#get_u65B9_u6CD5" class="headerlink" title="get方法"></a>get方法</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">get</span>: <span class="function"><span class="keyword">function</span><span class="params">(idx)</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> idx === <span class="literal">undefined</span> ? slice.call(<span class="keyword">this</span>) : <span class="keyword">this</span>[idx &gt;= <span class="number">0</span> ? idx : idx + <span class="keyword">this</span>.length]</span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></figure>
+<p>取集合中对应指定索引的值，如果<code>idx</code>小于0,则<code>idx</code>等于<code>idx+length</code>,<code>length</code>为集合的长度.</p>
+<p>可能你刚看到<code>slice.call(this)</code>会觉得很纳闷，其实不仅是<code>zepto.js</code>的源码，包括<code>jQuery</code>，<code>backbone</code>的源码都是这么写的，只不过它们在最开头做了声明：</p>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> push = <span class="keyword">array</span>.push;</span><br><span class="line"><span class="keyword">var</span> slice = <span class="keyword">array</span>.slice;</span><br><span class="line"><span class="keyword">var</span> splice = <span class="keyword">array</span>.splice;</span><br></pre></td></tr></table></figure>
+<p>所以<code>slice.call(this)</code>其实还是<code>Array.slce.call(this)</code></p>
+<h2 id="prototype-js_u6E90_u7801"><a href="#prototype-js_u6E90_u7801" class="headerlink" title="prototype.js源码"></a>prototype.js源码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">     </span><br><span class="line"><span class="comment">//为对象添加 class 属性值</span></span><br><span class="line">  </span><br><span class="line"> addClassName: <span class="function"><span class="keyword">function</span>(<span class="params">element, className</span>) </span>&#123;</span><br><span class="line">      element = $(element);</span><br><span class="line">      Element.removeClassName(element, className);</span><br><span class="line">      element.className += <span class="string">' '</span> + className;</span><br><span class="line">  &#125;,</span><br><span class="line">    </span><br><span class="line">  </span><br><span class="line"> <span class="comment">//为对象移除 class 属性值</span></span><br><span class="line">   </span><br><span class="line">  removeClassName: <span class="function"><span class="keyword">function</span>(<span class="params">element, className</span>) </span>&#123;</span><br><span class="line">      element = $(element);</span><br><span class="line">      <span class="keyword">if</span> (!element)</span><br><span class="line">          <span class="keyword">return</span>;</span><br><span class="line">      <span class="keyword">var</span> newClassName = <span class="string">''</span>;</span><br><span class="line">      <span class="keyword">var</span> a = element.className.split(<span class="string">' '</span>);</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; a.length; i++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (a[i] != className) &#123;</span><br><span class="line">              <span class="keyword">if</span> (i &gt; <span class="number">0</span>)</span><br><span class="line">                  newClassName += <span class="string">' '</span>;</span><br><span class="line">              newClassName += a[i];</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      element.className = newClassName;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<p>因为<code>addClassName</code>依赖于<code>removeClassName()</code>，所以先分析后者，<code>$()</code>是先将元素封装成<code>prototype</code>对象，</p>
+<pre><code>if(!element)  return
+</code></pre><p>这句的意思就是如果元素对象不存在，则忽略不再继续执行的意思，也就是终止的意思。</p>
+<pre><code>split() 方法用于把一个字符串分割成字符串数组。
+</code></pre><p>如果把空字符串 (<code>&quot;&quot;</code>) 用作 分隔符，那么 该对象 中的每个字符之间都会被分割。</p>
+<h3 id="u5224_u65AD_u662F_u5426_u62E5_u6709_class__u5C5E_u6027_u503C"><a href="#u5224_u65AD_u662F_u5426_u62E5_u6709_class__u5C5E_u6027_u503C" class="headerlink" title="判断是否拥有 class 属性值"></a>判断是否拥有 class 属性值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//是否拥有 class 属性值</span></span><br><span class="line"></span><br><span class="line">hasClassName: <span class="function"><span class="keyword">function</span>(<span class="params">element, className</span>) </span>&#123;</span><br><span class="line">    element = $(element);</span><br><span class="line">    <span class="keyword">if</span> (!element)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">var</span> a = element.className.split(<span class="string">' '</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; a.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[i] == className)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;<span class="comment">//返回正确的处理结果</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;<span class="comment">//返回错误的处理结果</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="u517C_u5BB9_u65E7_u7248_u672C_u6D4F_u89C8_u5668_u589E_u52A0Array_u7684push_u65B9_u6CD5"><a href="#u517C_u5BB9_u65E7_u7248_u672C_u6D4F_u89C8_u5668_u589E_u52A0Array_u7684push_u65B9_u6CD5" class="headerlink" title="兼容旧版本浏览器增加Array的push方法"></a>兼容旧版本浏览器增加Array的push方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 为兼容旧版本的浏览器增加 Array 的 push 方法。</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">if</span> (!<span class="built_in">Array</span>.prototype.push) &#123;</span><br><span class="line">    <span class="built_in">Array</span>.prototype.push = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> startLength = <span class="keyword">this</span>.length;<span class="comment">//this指代Array</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++)</span><br><span class="line">            <span class="keyword">this</span>[startLength + i] = <span class="built_in">arguments</span>[i];<span class="comment">//this依旧指代Array</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.length;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>!Array.prototype.push</code>如果为<code>true</code>，说明浏览器不支持该方法，则往下执行。<code>this[startLength + i] = arguments[i]</code>将传递进来的每个参数依次放入数组中，最后返回数组的长度</p>
+<p>访问对象可以使用<code>(.)</code>表示法，也可以使用<code>[]</code>来访问，同样访问数组元素也是</p>
+<h2 id="jQuery__u6E90_u7801"><a href="#jQuery__u6E90_u7801" class="headerlink" title="<code>jQuery</code> 源码"></a><code>jQuery</code> 源码</h2><p><code>jQuery</code>源码太多关联了，所以不好单独拿出来做分析，就举一两个简单的例子吧：</p>
+<h3 id="toArray_u65B9_u6CD5"><a href="#toArray_u65B9_u6CD5" class="headerlink" title="<code>toArray</code>方法"></a><code>toArray</code>方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">jQuery.prototype = &#123;</span><br><span class="line">    toArray: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> slice.call( <span class="keyword">this</span> );</span><br><span class="line">        &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> <code>Array.prototype.slice.call(arguments)</code>能将具有<code>length</code>属性的对象转成数组，也就是说其目的是将<code>arguments</code>对象的数组提出来转化为数组。例如：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">    <span class="keyword">var</span> a = &#123;length:<span class="number">4</span>,<span class="number">0</span>:<span class="string">'zero'</span>,<span class="number">1</span>:<span class="string">'one'</span>,<span class="number">2</span>:<span class="string">'two'</span>&#125;;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">Array</span>.prototype.slice.call(a));<span class="comment">// Array [ "zero", "one", "two", &lt;1 个空的存储位置&gt; ]</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>slice</code>有两个用法，一个是<code>String.slice</code>，一个是<code>Array.slice</code>，第一个返回的是字符串，第二个返回的是数组。</p>
+<p><code>Array.prototype.slice.call(arguments)</code>能够将<code>arguments</code>转成数组，那么就是<code>arguments.toArray().slice()</code>;</p>
+<p> 因为<code>arguments</code>并不是真正的数组对象，只是与数组类似而已，所以它并没有<code>slice</code>这个方法，而<code>Array.prototype.slice.call(arguments)</code>可以理解成是将<code>arguments</code>转换成一个<strong>数组对象</strong>，让<code>arguments</code>具有<code>slice()</code>方法。 比如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line">console.<span class="built_in">log</span>(Array.prototype.slice.call(arr,<span class="number">2</span>));<span class="comment">//[3,4]</span></span><br></pre></td></tr></table></figure>
+<p><code>Array</code><br>这是我们想要的基对象名称</p>
+<p><code>prototype</code><br>这可以被认为是一个数组的实例方法的命名空间</p>
+<p><code>slice</code><br>这提取数组的一部分并返回新的数组，并没有开始和结束索引，它只是返回一个数组的拷贝</p>
+<p><code>call</code><br>这是一个非常有用的功能，它允许你从一个对象调用一个函数并且使用它在另一个上下文环境</p>
+<p>下面的写法是等效的：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array<span class="class">.prototype</span><span class="class">.slice</span><span class="class">.call</span> == []<span class="class">.slice</span><span class="class">.call</span></span><br></pre></td></tr></table></figure>
+<p>看这个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">     </span><br><span class="line">    object1 = &#123;</span><br><span class="line">        name:<span class="string">'frank'</span>,</span><br><span class="line">        greet:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            alert(<span class="string">'hello '</span>+<span class="keyword">this</span>.name)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    object2 = &#123;</span><br><span class="line">        name:<span class="string">'trigkit4'</span></span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// object2没有greet方法</span></span><br><span class="line">    <span class="comment">// 但我们可以从object1中借来</span></span><br><span class="line">    </span><br><span class="line">     object1.greet.call(object2);<span class="comment">//弹出hello trigkit4</span></span><br><span class="line"></span><br><span class="line">分解一下就是<span class="string">`object1.greet`</span>运行弹出<span class="string">`hello + 'this.name'`</span>，然后<span class="string">`object2`</span>对象冒充，<span class="string">`this`</span>就指代<span class="string">`object2`</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> t = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">// String [ "t", "r", "i", "g", "k", "i", "t", "4" ]</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="keyword">this</span>);  <span class="comment">//  Object</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span> <span class="keyword">instanceof</span> <span class="built_in">String</span>);  <span class="comment">// true</span></span><br><span class="line">    &#125;;</span><br><span class="line">    t.call(<span class="string">'trigkit4'</span>);</span><br><span class="line"><span class="string">`call(this)`</span>指向了所传进去的对象。</span><br></pre></td></tr></table></figure>
+<p>在<code>Object.prototype</code>中已经包含了一些方法：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="number">1</span><span class="class">.toString</span> ( )</span><br><span class="line"></span><br><span class="line"><span class="number">2</span><span class="class">.toLocaleString</span> ( )</span><br><span class="line"></span><br><span class="line"><span class="number">3</span><span class="class">.valueOf</span> ( )</span><br><span class="line"></span><br><span class="line"><span class="number">4</span><span class="class">.hasOwnProperty</span> (V)</span><br><span class="line"></span><br><span class="line"><span class="number">5</span><span class="class">.isPrototypeOf</span> (V)</span><br><span class="line"></span><br><span class="line"><span class="number">6</span><span class="class">.propertyIsEnumerable</span> (V)</span><br></pre></td></tr></table></figure>
+<h3 id="on_u65B9_u6CD5"><a href="#on_u65B9_u6CD5" class="headerlink" title="on方法"></a>on方法</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="label">jQuery.fn.extend</span>(&#123;</span><br><span class="line"><span class="label">    on:</span> <span class="preprocessor">function</span>( types, <span class="keyword">selector, </span><span class="preprocessor">data</span>, <span class="preprocessor">fn</span>, <span class="comment">/*INTERNAL*/</span> one ) &#123;</span><br><span class="line">        var type, origFn<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">        // Types can <span class="keyword">be </span>a <span class="preprocessor">map</span> of types/handlers</span><br><span class="line">        <span class="preprocessor">if</span> ( typeof types === <span class="string">"object"</span> ) &#123;</span><br><span class="line">            // ( types-Object, <span class="keyword">selector, </span><span class="preprocessor">data</span> )</span><br><span class="line">            <span class="preprocessor">if</span> ( typeof <span class="keyword">selector </span>!== <span class="string">"string"</span> ) &#123;</span><br><span class="line">                // ( types-Object, <span class="preprocessor">data</span> )</span><br><span class="line">                <span class="preprocessor">data</span> = <span class="preprocessor">data</span> <span class="title">||</span> <span class="keyword">selector;</span><br><span class="line"></span>                <span class="keyword">selector </span>= undefined<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="label">jQuery.extend</span>(object) ：为扩展jQuery类本身.为类添加新的方法。</span><br><span class="line"></span><br><span class="line"><span class="label">jQuery.fn.extend</span>(object) ：给jQuery对象添加方法。</span><br></pre></td></tr></table></figure>
+<p><code>!=</code> 在表达式两边的数据类型不一致时,会隐式转换为相同数据类型,然后对值进行比较.<br><code>!==</code> 不会进行类型转换,在比较时除了对值进行比较以外，还比较两边的数据类型, 它是恒等运算符<code>===</code>的非形式。   </p>
+<p><code>on : function(){}</code> 是<code>js</code>对象字面量的写法</p>
+<p><code>{键:值,键:值}</code>语法中的<code>“健/值”</code>会成为对象的静态成员。如果给某个“健”指定的值是一个匿名函数，那么该函数就会变成对象的静态方法；否则就是对象的一个静态属性。<br><img src="/img/bVlmSc" alt="图片描述"></p>
+<h3 id="jQuery_u7C7B_u578B_u5224_u65AD"><a href="#jQuery_u7C7B_u578B_u5224_u65AD" class="headerlink" title="jQuery类型判断"></a>jQuery类型判断</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">type: <span class="function"><span class="keyword">function</span><span class="params">( obj )</span> </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> ( obj == <span class="literal">null</span> ) &#123;</span><br><span class="line">                <span class="keyword">return</span> obj + <span class="string">""</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">typeof</span> obj === <span class="string">"object"</span> || <span class="keyword">typeof</span> obj === <span class="string">"function"</span> ?</span><br><span class="line">            class2type[ toString.call(obj) ] || <span class="string">"object"</span> :</span><br><span class="line">                <span class="keyword">typeof</span> obj;</span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></figure>
+<p>前面已经分析了，<code>class2type = {};</code>所以<code>class2type[ toString.call(obj) ]</code> =<br><code>{}.toString.call(obj)</code>。它的作用是改变<code>toString</code>的<code>this</code>指向为<code>object</code>的实例。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/12/11/js-class/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript类的写法</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="jsFramework" data-title="关于一些前端js框架的源码研究" data-url="hawx1993.github.io/2015/12/22/jsFramework/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+		var duoshuoQuery = {short_name:"trigkit4"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0]
+			|| document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 trigkit4
+    	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
