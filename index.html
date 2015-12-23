@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ECMAScript6-JavaScript/" style="font-size: 10px;">ECMAScript6,JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Node-js-MongoDb-Mongoose/" style="font-size: 10px;">Node.js,MongoDb, Mongoose</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/jade/" style="font-size: 10px;">jade</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/js-前端/" style="font-size: 10px;">js,前端</a> <a href="/tags/react-native-reactjs/" style="font-size: 10px;">react-native,reactjs</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+						<a href="/tags/ECMAScript6-JavaScript/" style="font-size: 10px;">ECMAScript6,JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Node-js-MongoDb-Mongoose/" style="font-size: 10px;">Node.js,MongoDb, Mongoose</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/jade/" style="font-size: 10px;">jade</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/js-this/" style="font-size: 10px;">js,this</a> <a href="/tags/js-前端/" style="font-size: 10px;">js,前端</a> <a href="/tags/react-native-reactjs/" style="font-size: 10px;">react-native,reactjs</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
 					</div>
 				</section>
 				
@@ -189,6 +189,68 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-js-this" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/23/js-this/" class="article-date">
+  	<time datetime="2015-12-23T04:56:11.000Z" itemprop="datePublished">2015-12-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/23/js-this/">详解js和jquery里的this关键字</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在<code>《javaScript语言精粹》</code>这本书中，把 <code>this</code> 出现的场景分为四类，简单的说就是：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">有对象就指向调用对象</span><br><span class="line"></span><br><span class="line">没调用对象就指向全局对象</span><br><span class="line"></span><br><span class="line">用<span class="keyword">new</span>构造就指向新对象</span><br><span class="line"></span><br><span class="line">通过 apply 或 <span class="keyword">call</span> 或 bind 来改变 <span class="keyword">this</span> 的所指。</span><br></pre></td></tr></table></figure>
+<p>函数调用模式中，<code>this</code>为<code>window</code>；方法调用模式中，<code>this</code>为方法所属的对象；构造器调用模式中，<code>this</code>为创建的新对象。</p>
+<h2 id="js_u4E2D_u7684this"><a href="#js_u4E2D_u7684this" class="headerlink" title="<code>js</code>中的this"></a><code>js</code>中的this</h2><p>我们要记住：<code>this</code>永远指向函数运行时所在的对象！而不是函数被创建时所在的对象。</p>
+<p><code>this</code>对象是在运行时基于函数的执行环境绑定的，在全局环境中，<code>this</code>等于<code>window</code></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js-this/">js,this</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/23/js-this/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-jsFramework" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -767,81 +829,6 @@
       
         <p class="article-more-link">
           <a  href="/2015/12/04/es6/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-react" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/04/react/" class="article-date">
-  	<time datetime="2015-12-04T07:29:21.000Z" itemprop="datePublished">2015-12-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/04/react/">react 学习笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="React_Native_u63D0_u4F9B_u4E86_u54EA_u4E9B_u80FD_u529B"><a href="#React_Native_u63D0_u4F9B_u4E86_u54EA_u4E9B_u80FD_u529B" class="headerlink" title="<code>React Native</code>提供了哪些能力"></a><code>React Native</code>提供了哪些能力</h3><ul>
-<li><p>基于原生UI组件</p>
-</li>
-<li><p>手势识别</p>
-</li>
-<li><p>基于<code>FlexBox</code>的<code>css</code>布局模式</p>
-</li>
-<li><p>跨平台开发</p>
-</li>
-<li><p>基于<code>React</code>，<code>jsx</code>的组件化开发模式</p>
-</li>
-<li><p>可使用<code>npm</code>中的模块</p>
-</li>
-<li><p>Chrome Dev Tool的集成</p>
-</li>
-</ul>
-<p>特点：<code>JSX</code>语法，组件化模式，<code>Virtual DOM</code>，单向数据流</p>
-<p>基本模式：每个<code>React</code>组件由属性(property)和状态（state）来配置，当状态发生变化时更新UI，组件的结构是由虚拟的DOM来维护，确保了实际更新的<code>DOM</code>只包括真正产生了状态变化的部分</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react-native-reactjs/">react-native,reactjs</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/04/react/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

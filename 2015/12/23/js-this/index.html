@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>详解js和jquery里的this关键字 | 前端博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在《javaScript语言精粹》这本书中，把 this 出现的场景分为四类，简单的说就是：
+1234567有对象就指向调用对象没调用对象就指向全局对象用new构造就指向新对象通过 apply 或 call 或 bind 来改变 this 的所指。
+函数调用模式中，this为window；方法调用模式中，this为方法所属的对象；构造器调用模式中，this为创建的新对象。
+js中的this&quot;&amp;gt;js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="详解js和jquery里的this关键字">
+<meta property="og:url" content="hawx1993.github.io/2015/12/23/js-this/index.html">
+<meta property="og:site_name" content="前端博客">
+<meta property="og:description" content="在《javaScript语言精粹》这本书中，把 this 出现的场景分为四类，简单的说就是：
+1234567有对象就指向调用对象没调用对象就指向全局对象用new构造就指向新对象通过 apply 或 call 或 bind 来改变 this 的所指。
+函数调用模式中，this为window；方法调用模式中，this为方法所属的对象；构造器调用模式中，this为创建的新对象。
+js中的this&quot;&amp;gt;js">
+<meta property="og:updated_time" content="2015-12-23T05:05:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="详解js和jquery里的this关键字">
+<meta name="twitter:description" content="在《javaScript语言精粹》这本书中，把 this 出现的场景分为四类，简单的说就是：
+1234567有对象就指向调用对象没调用对象就指向全局对象用new构造就指向新对象通过 apply 或 call 或 bind 来改变 this 的所指。
+函数调用模式中，this为window；方法调用模式中，this为方法所属的对象；构造器调用模式中，this为创建的新对象。
+js中的this&quot;&amp;gt;js">
+  
+    <link rel="alternative" href="/atom.xml" title="前端博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/me.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">trigkit4</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">trigkit4 | 前端笔记</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/diary">技术日记</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/hawx1993" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/weibo.com/hawx1993" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/trigkit@163.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/ECMAScript6-JavaScript/" style="font-size: 10px;">ECMAScript6,JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Node-js-MongoDb-Mongoose/" style="font-size: 10px;">Node.js,MongoDb, Mongoose</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/jade/" style="font-size: 10px;">jade</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/js-this/" style="font-size: 10px;">js,this</a> <a href="/tags/js-前端/" style="font-size: 10px;">js,前端</a> <a href="/tags/react-native-reactjs/" style="font-size: 10px;">react-native,reactjs</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://segmentfault.com/u/trigkit4">我的sf</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">大二开始接触前端开发，大三在美团实习。喜欢简洁风格，Mac重度用户。喜爱折腾的前端工程师一枚</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">trigkit4</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/me.jpeg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">trigkit4</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">trigkit4 | 前端笔记</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/diary">技术日记</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/hawx1993" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/weibo.com/hawx1993" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/trigkit@163.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-js-this" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/23/js-this/" class="article-date">
+  	<time datetime="2015-12-23T04:56:11.000Z" itemprop="datePublished">2015-12-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      详解js和jquery里的this关键字
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js-this/">js,this</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在<code>《javaScript语言精粹》</code>这本书中，把 <code>this</code> 出现的场景分为四类，简单的说就是：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">有对象就指向调用对象</span><br><span class="line"></span><br><span class="line">没调用对象就指向全局对象</span><br><span class="line"></span><br><span class="line">用<span class="keyword">new</span>构造就指向新对象</span><br><span class="line"></span><br><span class="line">通过 apply 或 <span class="keyword">call</span> 或 bind 来改变 <span class="keyword">this</span> 的所指。</span><br></pre></td></tr></table></figure>
+<p>函数调用模式中，<code>this</code>为<code>window</code>；方法调用模式中，<code>this</code>为方法所属的对象；构造器调用模式中，<code>this</code>为创建的新对象。</p>
+<h2 id="js_u4E2D_u7684this"><a href="#js_u4E2D_u7684this" class="headerlink" title="<code>js</code>中的this"></a><code>js</code>中的this</h2><p>我们要记住：<code>this</code>永远指向函数运行时所在的对象！而不是函数被创建时所在的对象。</p>
+<p><code>this</code>对象是在运行时基于函数的执行环境绑定的，在全局环境中，<code>this</code>等于<code>window</code></p>
+<a id="more"></a>
+<p>先来看个例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">var</span> fullname = <span class="string">"Trigkit4"</span>;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">var</span> person = &#123;</span><br><span class="line"></span><br><span class="line">       fullname : <span class="string">'Jack'</span>,</span><br><span class="line"></span><br><span class="line">   prop:&#123;</span><br><span class="line"></span><br><span class="line">       fullname : <span class="string">'Blizzard'</span>,</span><br><span class="line"></span><br><span class="line">       getFullname : <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">this</span>.fullname;</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(person.prop.getFullname());<span class="comment">//Blizzard</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> test = person.prop.getFullname;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(test());<span class="comment">//Trigkit4</span></span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>当<code>getFullname</code>被分配到<code>test</code>变量时，上下文指的是全局对象<code>（window）</code>。这是因为<code>test</code>是被隐式设置为全局对象的属性。出于这个原因，该函数返回<code>window</code>的<code>fullname</code>，所以在这里 <code>this</code> 指的是<code>window</code>， 所以返回的是第一个<code>fullname</code></p>
+<h3 id="u8BF4_u660E"><a href="#u8BF4_u660E" class="headerlink" title="说明"></a>说明</h3><p><code>this</code> 关键字通常在对象的 构造函数中使用，用来引用对象。</p>
+<p>关键字<code>this</code>：总是指向调用该方法的对象，如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> iCar = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"></span><br><span class="line">iCar.color = <span class="string">"red"</span>;</span><br><span class="line"></span><br><span class="line">iCar.showColor = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">     alert(<span class="keyword">this</span>.color);<span class="comment">//输出"red"</span></span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>关键字<code>this</code>用在对象的<code>showColor()</code>方法中，在此环境，<code>this</code>等于<code>iCar</code></p>
+<p>使用<code>this</code>是因为在实例化对象时，总是不能确定开发者会使用什么样的变量名。使用<code>this</code>，即可在任意多个地方重用同一个函数。考虑下面的例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showColor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">     alert(<span class="keyword">this</span>.color);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> oCar1 = <span class="keyword">new</span> <span class="built_in">Object</span>;</span><br><span class="line"></span><br><span class="line">oCar1.color = <span class="string">"red"</span>;</span><br><span class="line"></span><br><span class="line">oCar1.showColor = showColor;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> oCar2 = <span class="keyword">new</span> <span class="built_in">Object</span>;</span><br><span class="line"></span><br><span class="line">oCar2.color = <span class="string">"blue"</span>;</span><br><span class="line"></span><br><span class="line">oCar2.showcolor = showcolor;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">oCar1.showColor();<span class="comment">//输出"red"</span></span><br><span class="line"></span><br><span class="line">oCar2.showColor();<span class="comment">//输出"blue"</span></span><br></pre></td></tr></table></figure>
+<p>这段代码中，首先用<code>this</code>定义函数<code>showColor()</code>，然后创建两个对象<code>oCar1</code>和<code>oCar2</code>，一个对象属性被设置为”<code>red</code>“,另一个为<code>blue</code>；两个对象都被赋予了属性<code>showColor</code>，指向原始的<code>showColor()</code>函数，调用每个<code>showColor</code>的方法，<code>oCar1</code>输出<code>red</code>，<code>oCar2</code>输出<code>blue</code>。</p>
+<blockquote>
+<p>引用对象属性时，必须使用<code>this</code>关键字。</p>
+</blockquote>
+<p>所有基于全局作用域的变量其实都是<code>window</code>对象的属性（property）。这意味着即使是在全局上下文中，<code>this</code>变量也能指向一个对象。</p>
+<p>对于 <code>JScript</code> 的客户版本，如果在其他所有对象的上下文之外使用 <code>this</code>，则它指的是 <code>window</code> 对象。 </p>
+<p><strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html;charset=UTF-8"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="title">title</span>&gt;</span><span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="actionscript"> </span><br><span class="line"></span><br><span class="line">		alert(<span class="keyword">this</span>);<span class="comment">//弹出 object window；</span></span><br><span class="line"></span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="u4F5C_u4E3A_u6784_u9020_u51FD_u6570_u8C03_u7528"><a href="#u4F5C_u4E3A_u6784_u9020_u51FD_u6570_u8C03_u7528" class="headerlink" title="作为构造函数调用"></a>作为构造函数调用</h2><p>所谓构造函数，就是通过这个函数生成一个新对象（object）。这时，<code>this</code>就指这个新对象。 </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="actionscript"> </span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">this</span>.x = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">		<span class="keyword">var</span> obj = <span class="keyword">new</span> test();</span><br><span class="line"></span><br><span class="line">		alert(obj.x); <span class="comment">//弹出 10；</span></span><br><span class="line"></span><br><span class="line"> </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="u5168_u5C40_u73AF_u5883_u4E2D_u7684this"><a href="#u5168_u5C40_u73AF_u5883_u4E2D_u7684this" class="headerlink" title="全局环境中的this"></a>全局环境中的this</h2><p><strong>在看下面一个<code>this</code>出现在全局环境中的例子：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt; </span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> name = <span class="string">"全局"</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">getName</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">var</span> name = <span class="string">"局部"</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line"></span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	alert(getName());<span class="comment">//弹出 全局； </span></span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>函数<code>getName()</code>所处的对象是<code>window</code>对象，因此<code>this</code>也一定在<code>window</code>对象中。此时的<code>this</code>指向<code>window</code>对象，所以<code>getName()</code>返回的<code>this.name</code>其实是<code>window.name</code>，因此<code>alert</code>出<strong>全局</strong>。</p>
+<p><strong>结论：</strong>无论<code>this</code>身处何处，一定要找到函数运行时（或者说在何处被调用 了）的位置。</p>
+<p>通过不同的调用语法，改变相同函数内部<code>this</code>的值：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> foo = &#123;</span><br><span class="line"></span><br><span class="line">		test:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">			alert(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	foo.test();<span class="comment">//object,因为test方法在调用时属于foo对象</span></span><br><span class="line"></span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> baz = foo.test;</span><br><span class="line"></span><br><span class="line">	baz();<span class="comment">//window,因为baz()被调用时属于global对象</span></span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="u5C40_u90E8_u73AF_u5883_u4E2D_u7684this"><a href="#u5C40_u90E8_u73AF_u5883_u4E2D_u7684this" class="headerlink" title="局部环境中的this"></a>局部环境中的this</h2><p><strong>看下面一个<code>this</code>出现在局部环境中的例子</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="actionscript"> </span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> name = <span class="string">"全局"</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> jubu=&#123;</span><br><span class="line"></span><br><span class="line">    name:<span class="string">"局部"</span>,</span><br><span class="line"></span><br><span class="line">    getName:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	alert(jubu.getName());</span><br><span class="line"></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其中<code>this</code>身处的函数<code>getName</code>不是在全局环境中，而是处在jubu环境中。无论<code>this</code>身处何处，一定要找到函数运行时的位置。此时函数<code>getName</code>运行时的位置：</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert<span class="list">(<span class="keyword">jubu</span>.getName<span class="list">()</span>)</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>显然，函数<code>getName</code>所在的对象是<code>jubu</code>，因此<code>this</code>的安身之处定然在<code>jubu</code>，即指向<code>jubu</code>对象，则<code>getName</code>返回的<code>this.name</code>其实是<code>jubu.name</code>，因此<code>alert</code>出来的是“局部”！</p>
+<h2 id="u4F5C_u7528_u57DF_u94FE_u4E2D_u7684this"><a href="#u4F5C_u7528_u57DF_u94FE_u4E2D_u7684this" class="headerlink" title="作用域链中的this"></a>作用域链中的this</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">scoping</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">scoping()();</span><br><span class="line"></span><br><span class="line">&gt;&gt;<span class="built_in">window</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="built_in">window</span></span><br><span class="line"></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>因为<code>scoping</code>函数属于window对象，自然作用域链中的函数也属于<code>window</code>对象。</p>
+<h2 id="u5BF9_u8C61_u4E2D_u7684this"><a href="#u5BF9_u8C61_u4E2D_u7684this" class="headerlink" title="对象中的this"></a>对象中的this</h2><p>可以在对象的任何方法中使用<code>this</code>来访问该对象的属性。这与用<code>new</code>得到的实例是不一样的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line"></span><br><span class="line">    foo: <span class="string">"test"</span>,</span><br><span class="line"></span><br><span class="line">    bar: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.foo);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">obj.bar(); <span class="comment">// "test"</span></span><br></pre></td></tr></table></figure>
+<h2 id="u91CD_u5199this"><a href="#u91CD_u5199this" class="headerlink" title="重写this"></a>重写this</h2><p>无法重写<code>this</code>，因为它是一个关键字。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> <span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> <span class="keyword">this</span> = &#123;&#125;;  <span class="comment">// Uncaught SyntaxError: Unexpected token this </span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="apply__u548C_call__u8C03_u7528_u4EE5_u53CA_bind__u7ED1_u5B9A"><a href="#apply__u548C_call__u8C03_u7528_u4EE5_u53CA_bind__u7ED1_u5B9A" class="headerlink" title="apply 和 call 调用以及 bind 绑定"></a>apply 和 call 调用以及 bind 绑定</h2><p><code>apply</code> 和 <code>call</code> 调用以及 <code>bind</code> 绑定都是指向绑定的对象，</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> bar = &#123;</span><br><span class="line"></span><br><span class="line">        value: <span class="string">'huang'</span>,</span><br><span class="line"></span><br><span class="line">        ages: <span class="number">10</span></span><br><span class="line"></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(foo());<span class="comment">//window,函数没有所属对象：指向全局对象</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(foo.apply(bar));<span class="comment">//即bar.foo()，this指向了bar,所以能读取该对象的所有属性</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(foo.call(bar));<span class="comment">//ages: 10  value: "huang" __proto__: Object</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> newFoo = foo.bind(bar);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(newFoo());<span class="comment">//Object</span></span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="jquery_u4E2D_u7684this"><a href="#jquery_u4E2D_u7684this" class="headerlink" title="jquery中的this"></a>jquery中的this</h2><p><code>$()</code>生成的是什么呢？实际上<code>$()=jquery()</code>，那么也就是说返回的是一个<code>jquery</code>的对象。</p>
+<p><code>$(this)</code>是<code>jquery</code>对象，能调用<code>jquery</code>的方法，例如<code>click()</code>, <code>keyup()</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">   $(<span class="string">'button'</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">       alert(<span class="keyword">this</span>);<span class="comment">//this 表示原生的DOM</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">//$(this)表示当前对象，这里指的是button</span></span><br><span class="line"></span><br><span class="line">   &#125;) </span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>在许多情况下<code>JQuery</code>的<code>this</code>都指向<code>HTML</code>元素节点。</p>
+<p><strong>结论：</strong></p>
+<p><code>this</code>，表示当前的上下文对象是一个<code>html DOM</code>对象，可以调用<code>html</code>对象所拥有的属性，方法。</p>
+<p><code>$(this)</code>,代表的上下文对象是一个<code>jquery</code>的上下文对象，可以调用<code>jquery</code>的方法和属性值。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/12/22/jsFramework/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于一些前端js框架的源码研究</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="js-this" data-title="详解js和jquery里的this关键字" data-url="hawx1993.github.io/2015/12/23/js-this/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+		var duoshuoQuery = {short_name:"trigkit4"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0]
+			|| document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 trigkit4
+    	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
