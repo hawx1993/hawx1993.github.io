@@ -186,6 +186,56 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-也谈webpack及其开发模式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/21/也谈webpack及其开发模式/" class="article-date">
+  	<time datetime="2016-03-21T04:43:46.000Z" itemprop="datePublished">2016-03-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/21/也谈webpack及其开发模式/">也谈webpack及其开发模式</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-sumup" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -765,75 +815,6 @@
 
 
   
-    <article id="post-Mongodb" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/07/Mongodb/" class="article-date">
-  	<time datetime="2015-12-07T09:15:30.000Z" itemprop="datePublished">2015-12-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/07/Mongodb/">Node.js操作MongoDB数据库</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="u4F7F_u7528Mongoose_u64CD_u4F5CMongoDB"><a href="#u4F7F_u7528Mongoose_u64CD_u4F5CMongoDB" class="headerlink" title="使用<code>Mongoose</code>操作<code>MongoDB</code>"></a>使用<code>Mongoose</code>操作<code>MongoDB</code></h2><p><code>Mongoose</code>是基于<code>node-mongodb-native</code>开发的<code>MongoDB nodejs</code>驱动，可以在异步的环境下执行。</p>
-<p>关于在Mac下安装和使用<code>MongoDB</code>可以看我之前的一篇文章：</p>
-<blockquote>
-<p>文章传送门：<a href="http://segmentfault.com/a/1190000002547229#articleHeader4">Mac下安装MongoDB 及使用教程</a></p>
-</blockquote>
-<h3 id="MongoDB_PATH_u73AF_u5883_u53D8_u91CF_u914D_u7F6E"><a href="#MongoDB_PATH_u73AF_u5883_u53D8_u91CF_u914D_u7F6E" class="headerlink" title="<code>MongoDB PATH</code>环境变量配置"></a><code>MongoDB PATH</code>环境变量配置</h3><p>将<code>mongodb</code>添加到环境变量中：<code>$ vim ~/.zshrc</code>，添加如下命令行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$PATH</span>:/usr/local/mongodb/bin"</span></span><br></pre></td></tr></table></figure>
-<p>当然前提是将解压出来的文件移到<code>/usr/local/mongodb</code>目录中。版本3.0.7</p>
-<p>然后就可以在终端直接使用<code>MongoDB</code>命令，而不用每次都进入<code>MongoDB</code>所在文件夹的目录啦。</p>
-<p>比如，启动<code>MongoDB</code>，直接在终端输入 <code>$ mongo</code> 就可以启动啦</p>
-<p>默认运行在 <a href="http://127.0.0.1:27017">http://127.0.0.1:27017</a> 。</p>
-<p>还可以自定义端口：<code>$ mongod  --dbpath=data/db --port=27017</code>或者输入：<code>$ mongo 127.0.0.1:27017</code></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDb/">MongoDb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mongoose/">Mongoose</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/07/Mongodb/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -845,7 +826,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2015 trigkit4
+    		&copy; 2016 trigkit4
     	</div>
     </div>
   </div>
